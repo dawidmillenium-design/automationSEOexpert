@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Design Proposal C — Aurora Spotlight (gradient-mesh nav + bento dock)</title>
+<style>
+:root{--c1:#7c3aed;--c2:#0ea5e9;--c3:#f43f5e}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,sans-serif;background:#0b1020;color:#dbeafe;padding:120px 24px 150px;min-height:100vh}
+/* aurora blobs drifting behind the header */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:center;gap:4px;padding:14px 4vw;
+  background:rgba(11,16,32,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(124,58,237,.25);overflow:hidden}
+.topnav::before,.topnav::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;filter:blur(90px);opacity:.35;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+.topnav::before{background:var(--c1);left:-80px;top:-180px}
+.topnav::after{background:var(--c2);right:-80px;top:-180px;animation-delay:-7s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(120px,40px) scale(1.25)}}
+.topnav a{position:relative;z-index:1;color:#bfdbfe;text-decoration:none;font-size:14px;font-weight:600;padding:9px 16px;border-radius:12px;transition:color .2s}
+/* spotlight: each link gets a moving conic sheen only while hovered */
+.topnav a::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;opacity:0;transition:opacity .25s;
+  background:radial-gradient(120px circle at var(--x,50%) var(--y,50%),rgba(124,58,237,.5),rgba(14,165,233,.25) 45%,transparent 70%)}
+.topnav a:hover{color:#fff}
+.topnav a:hover::before{opacity:1}
+.topnav a.active{background:linear-gradient(120deg,var(--c1),var(--c2));color:#fff;box-shadow:0 4px 18px rgba(124,58,237,.45)}
+/* ---- BOTTOM: bento-style command dock with staggered entrance ---- */
+.dock{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:50;display:grid;grid-auto-flow:column;gap:8px;padding:10px;border-radius:20px;
+  background:rgba(17,24,39,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(59,130,246,.25);box-shadow:0 16px 50px rgba(0,0,0,.55)}
+.dock a{display:flex;align-items:center;gap:8px;color:#93c5fd;text-decoration:none;font-size:12.5px;font-weight:600;padding:10px 14px;border-radius:14px;
+  background:rgba(30,41,59,.6);animation:rise .5s cubic-bezier(.22,1,.36,1) backwards}
+.dock a:nth-child(1){animation-delay:.05s}.dock a:nth-child(2){animation-delay:.1s}.dock a:nth-child(3){animation-delay:.15s}
+.dock a:nth-child(4){animation-delay:.2s}.dock a:nth-child(5){animation-delay:.25s}.dock a:nth-child(6){animation-delay:.3s}
+@keyframes rise{from{transform:translateY(24px);opacity:0}}
+.dock a .dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--c2),var(--c1));transition:transform .3s}
+.dock a:hover{background:rgba(124,58,237,.22);color:#fff;transform:translateY(-4px);transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.dock a:hover .dot{transform:scale(1.8);box-shadow:0 0 12px var(--c2)}
+h1{font-size:22px} p{color:#93c5fd;max-width:640px;line-height:1.65}
+@media (prefers-reduced-motion:reduce){.topnav::before,.topnav::after,.dock a{animation:none}}
+</style>
+</head>
+<body>
+<nav class="topnav" aria-label="Primary">
+  <a class="active" href="index.html">Home</a>
+  <a href="#">Score Basics</a>
+  <a href="#">Growth Tactics</a>
+  <a href="#">Analytics</a>
+  <a href="#">Trends 2026</a>
+  <a href="about.html">About</a>
+</nav>
+<h1>Proposal C — “Aurora Spotlight”</h1>
+<p>Two blurred aurora blobs slowly drift behind a translucent header; hovering a menu item paints a soft radial spotlight that tracks your pointer (CSS custom properties updated by 3 lines of JS). The active page gets a gradient chip. The bottom command dock is a grid of six chips that rise in with a staggered entrance animation; each has a glowing dot that scales up on hover.</p>
+<nav class="dock" aria-label="Quick links">
+  <a href="what-is-video-virality-score.html"><span class="dot"></span>Score 101</a>
+  <a href="how-to-improve-video-virality-score.html"><span class="dot"></span>Improve</a>
+  <a href="analyzing-viral-video-metrics.html"><span class="dot"></span>Metrics</a>
+  <a href="viral-video-trends-in-2026.html"><span class="dot"></span>Trends</a>
+  <a href="author-profile.html"><span class="dot"></span>Authors</a>
+  <a href="editorial-policy.html"><span class="dot"></span>Policy</a>
+</nav>
+<script>
+document.querySelectorAll('.topnav a').forEach(a=>a.addEventListener('pointermove',e=>{const r=a.getBoundingClientRect();a.style.setProperty('--x',(e.clientX-r.left)+'px');a.style.setProperty('--y',(e.clientY-r.top)+'px')}));
+</script>
+</body>
+</html>

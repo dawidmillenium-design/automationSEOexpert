@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Design Proposal B — Retro Wave (scroll-shrink header + wave footer)</title>
+<style>
+:root{--ink:#1e1b4b;--pop:#facc15;--pop2:#fb7185}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,serif;background:#fdf6e3;color:var(--ink);padding:110px 24px 170px}
+/* ---- TOP: bold editorial bar that shrinks on scroll (position:sticky + container queries-free) ---- */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;padding:18px 6vw;
+  clip-path:inset(0 0 0 0);transition:padding .3s ease,box-shadow .3s}
+.topbar.small{padding:8px 6vw;box-shadow:0 6px 24px rgba(30,27,75,.35)}
+.topbar .logo{font-weight:900;font-size:clamp(18px,2.4vw,26px);letter-spacing:.5px;transition:font-size .3s}
+.topbar.small .logo{font-size:18px}
+.topbar .logo em{font-style:normal;color:var(--pop)}
+.topbar ul{display:flex;gap:clamp(8px,2vw,28px);list-style:none;margin:0;padding:0}
+.topbar a{color:#fff;text-decoration:none;font-size:15px;position:relative;padding:6px 2px;display:inline-block}
+/* wavy underline drawn with SVG-ish gradient, animates in from left */
+.topbar a::before{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="6"><path d="M0 3 Q3 0 6 3 T12 3 T18 3 T24 3" fill="none" stroke="%23facc15" stroke-width="2"/></svg>') repeat-x left bottom;
+  transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.topbar a:hover::before{transform:scaleX(1)}
+.topbar a:hover{color:var(--pop)}
+/* marquee announcement strip (pure CSS scrolling text) */
+.strip{position:fixed;top:64px;left:0;right:0;z-index:49;background:var(--pop);color:var(--ink);overflow:hidden;white-space:nowrap;font:700 12px system-ui;padding:4px 0;transition:top .3s}
+.strip .track{display:inline-block;animation:marq 18s linear infinite}
+.topbar.small + .strip{top:44px}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* ---- BOTTOM: layered animated wave footer with 6 buttons ---- */
+.wavefoot{position:fixed;bottom:0;left:0;right:0;z-index:50;background:var(--ink);color:#fff;padding:26px 6vw 20px}
+.wavefoot svg.waves{position:absolute;top:-38px;left:0;width:100%;height:40px;display:block}
+.wavefoot svg.waves path{animation:bob 6s ease-in-out infinite alternate}
+.wavefoot svg.waves path:nth-child(2){animation-duration:8s;opacity:.5}
+@keyframes bob{from{transform:translateX(0)}to{transform:translateX(-24px)}}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btnrow a{color:#fff;text-decoration:none;font:600 13px system-ui;border:1.5px solid rgba(255,255,255,.4);border-radius:10px;padding:9px 18px;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s,border-color .2s,color .2s}
+.btnrow a:hover{transform:translateY(-5px) rotate(-1.5deg);background:var(--pop);border-color:var(--pop);color:var(--ink)}
+.btnrow a:nth-child(even):hover{background:var(--pop2);border-color:var(--pop2)}
+h1{font-size:24px} p{max-width:640px;line-height:1.7}
+@media (prefers-reduced-motion:reduce){.strip .track,.wavefoot svg.waves path{animation:none}}
+</style>
+</head>
+<body>
+<header class="topbar" id="tb">
+  <span class="logo">Video <em>Virality</em> Score</span>
+  <nav><ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">Score Basics</a></li>
+    <li><a href="#">Growth Tactics</a></li>
+    <li><a href="#">Analytics</a></li>
+    <li><a href="#">Trends 2026</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul></nav>
+</header>
+<div class="strip"><span class="track">★ New: 2026 Virality Benchmarks ★ Mobile Optimization Playbook updated ★ Free virality score guide ★ &nbsp;&nbsp;★ New: 2026 Virality Benchmarks ★ Mobile Optimization Playbook updated ★ Free virality score guide ★ &nbsp;&nbsp;</span></div>
+
+<h1>Proposal B — “Retro Wave Editorial”</h1>
+<p>Warm paper background with a dark editorial header that shrinks as you scroll (JS toggles one class; everything else is CSS). Nav links reveal a hand-drawn yellow wave underline. A pure-CSS marquee announcement strip slides beneath. The footer is a dark bar topped by two gently bobbing SVG waves, holding six outlined buttons that lift, tilt and fill with color on hover.</p>
+
+<footer class="wavefoot">
+  <svg class="waves" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 20 Q60 0 120 20 T240 20 T360 20 T480 20 T600 20 T720 20 T840 20 T960 20 T1080 20 T1200 20 T1320 20 T1440 20 V40 H0 Z" fill="#1e1b4b"/>
+    <path d="M0 26 Q60 8 120 26 T240 26 T360 26 T480 26 T600 26 T720 26 T840 26 T960 26 T1080 26 T1200 26 T1320 26 T1440 26 V40 H0 Z" fill="#1e1b4b"/>
+  </svg>
+  <div class="btnrow">
+    <a href="what-is-video-virality-score.html">What is the Score?</a>
+    <a href="how-to-improve-video-virality-score.html">Improve Your Score</a>
+    <a href="calculating-virality-score.html">Calculate</a>
+    <a href="viral-video-trends-in-2026.html">2026 Trends</a>
+    <a href="author-profile.html">Our Authors</a>
+    <a href="editorial-policy.html">Editorial Policy</a>
+  </div>
+</footer>
+<script>
+addEventListener('scroll',()=>{document.getElementById('tb').classList.toggle('small',scrollY>40)},{passive:true});
+</script>
+</body>
+</html>

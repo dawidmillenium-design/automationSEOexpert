@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Design Proposal A — Neon Glass (frosted sticky nav + floating dock)</title>
+<style>
+:root{--accent:#6366f1;--accent2:#ec4899;}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding:120px 24px 140px}
+/* ---- TOP: frosted glass sticky bar with animated gradient border ---- */
+.topnav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:50;
+  display:flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;
+  background:rgba(15,23,42,.55);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);
+  border:1px solid transparent;
+  background-image:linear-gradient(rgba(15,23,42,.55),rgba(15,23,42,.55)),conic-gradient(from var(--ang,0deg),#6366f1,#ec4899,#22d3ee,#6366f1);
+  background-origin:border-box;background-clip:padding-box,border-box;
+  animation:spin 8s linear infinite;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes spin{to{--ang:360deg}}
+.topnav .brand{font-weight:800;margin-right:10px;background:linear-gradient(90deg,#a5b4fc,#f9a8d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.topnav a.item{position:relative;color:#cbd5e1;text-decoration:none;padding:8px 14px;border-radius:999px;font-size:14px;transition:color .25s,background .25s}
+.topnav a.item:hover{color:#fff;background:rgba(99,102,241,.18)}
+.topnav a.item::after{content:"";position:absolute;left:50%;bottom:2px;width:0;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s ease,left .3s ease}
+.topnav a.item:hover::after{width:60%;left:20%}
+/* magnetic hover glow that follows the cursor via :has-less trick (per-item spotlight) */
+.topnav a.item span.glow{position:absolute;inset:-2px;border-radius:inherit;opacity:0;transition:opacity .3s;pointer-events:none;background:radial-gradient(60px circle at var(--mx,50%) var(--my,50%),rgba(129,140,248,.35),transparent 70%)}
+.topnav a.item:hover span.glow{opacity:1}
+/* ---- BOTTOM: floating dock, Apple-style magnification ---- */
+.dock{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:10px;padding:10px 14px;border-radius:24px;
+  background:rgba(30,41,59,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(148,163,184,.2);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.dock a{display:flex;flex-direction:column;align-items:center;gap:4px;width:64px;text-decoration:none;color:#94a3b8;font-size:10px;
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1),color .25s;transform-origin:bottom center}
+.dock a svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.8;transition:filter .25s}
+.dock a:hover{transform:scale(1.35) translateY(-8px);color:#fff}
+.dock a:hover svg{filter:drop-shadow(0 0 8px rgba(99,102,241,.8))}
+.dock a:hover + a,.dock a:has(+ a:hover){transform:scale(1.15) translateY(-3px)} /* neighbors peek using :has() */
+h1{font-size:22px} p{color:#94a3b8;max-width:640px;line-height:1.6}
+@media (prefers-reduced-motion:reduce){.topnav{animation:none}.dock a{transition:none}}
+</style>
+</head>
+<body>
+<nav class="topnav" aria-label="Primary">
+  <span class="brand">VVS</span>
+  <a class="item" href="index.html"><span class="glow"></span>Home</a>
+  <a class="item" href="#"><span class="glow"></span>Score Basics</a>
+  <a class="item" href="#"><span class="glow"></span>Growth Tactics</a>
+  <a class="item" href="#"><span class="glow"></span>Analytics</a>
+  <a class="item" href="#"><span class="glow"></span>Trends 2026</a>
+  <a class="item" href="about.html"><span class="glow"></span>About</a>
+</nav>
+
+<h1>Proposal A — “Neon Glass”</h1>
+<p>Frosted-glass pill navbar pinned top-center with an animated conic-gradient border (CSS @property), cursor-following radial glow on each item, and underline morph on hover. Bottom is a floating dock: icons magnify with a springy cubic-bezier and neighbours "peek" using the modern :has() selector. Respects prefers-reduced-motion.</p>
+
+<nav class="dock" aria-label="Secondary">
+  <a href="what-is-video-virality-score.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>Score</a>
+  <a href="how-to-improve-video-virality-score.html"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>Improve</a>
+  <a href="mobile-optimization-for-viral-videos.html"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Mobile</a>
+  <a href="viral-video-trends-in-2026.html"><svg viewBox="0 0 24 24"><path d="M4 20c8 0 12-4 16-16-2 8-8 12-16 16z"/><path d="M4 20l4-4"/></svg>Trends</a>
+  <a href="author-profile.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg>Authors</a>
+  <a href="editorial-policy.html"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Policy</a>
+</nav>
+<script>
+// tiny progressive-enhancement: feed pointer position into the CSS glow var
+document.querySelectorAll('.topnav a.item').forEach(a=>a.addEventListener('pointermove',e=>{const r=a.getBoundingClientRect();a.style.setProperty('--mx',(e.clientX-r.left)+'px');a.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+</script>
+</body>
+</html>
