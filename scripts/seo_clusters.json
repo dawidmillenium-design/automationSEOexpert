@@ -1,0 +1,1029 @@
+{
+ "domain_placeholder": "https://example.com",
+ "pillars": {
+  "analyzing-competitor-virality-scores.html": "Analyzing Competitor Virality Scores",
+  "analyzing-viral-video-metrics.html": "Video Virality Score",
+  "case-studies-of-viral-videos.html": "Case Studies: Successful Viral Videos",
+  "collaboration-in-viral-video-production.html": "Collaboration in Viral Video Production",
+  "colors-and-visual-design-in-viral-videos.html": "The Impact of Colors and Design on Video Virality",
+  "common-mistakes-in-creating-viral-videos.html": "Common Mistakes When Creating Viral Videos",
+  "community-building-for-virality.html": "Building Community Around Your Video Content for Virality",
+  "creating-shareable-video-content.html": "Creating Shareable Video Content",
+  "cultural-impact-on-video-virality.html": "The Cultural Impact on Video Virality Scores",
+  "exploring-the-role-of-social-media-in-video-virality.html": "The Role of Social Media in Video Virality",
+  "factors-affecting-video-virality-score.html": "Factors Affecting Video Virality Score",
+  "genres-that-boost-video-virality.html": "Genres That Boost Video Virality",
+  "how-to-calculate-video-virality-score.html": "How to Calculate Video Virality Score",
+  "how-to-improve-video-virality-score.html": "How to Improve Your Video Virality Score",
+  "impact-of-branding-on-video-virality.html": "Impact of Branding on Video Virality Score",
+  "leveraging-influencers-for-video-virality.html": "Leveraging Influencers for Increased Video Virality",
+  "mobile-optimization-for-viral-videos.html": "Mobile Optimization for Viral Videos: The Complete 2026 Playbook",
+  "navigating-video-regulations-and-compliance.html": "Navigating Video Regulations and Compliance for Virality",
+  "optimizing-thumbnails-for-virality.html": "Optimizing Thumbnails for Higher Video Virality",
+  "optimizing-video-length-for-virality.html": "Optimizing Video Length for Maximum Virality",
+  "the-art-of-storytelling-in-viral-videos.html": "The Art of Storytelling in Viral Videos",
+  "the-connection-between-trends-and-virality.html": "The Connection Between Trends and Video Virality",
+  "the-impact-of-video-quality-on-virality.html": "The Impact of Video Quality on Virality",
+  "the-importance-of-a-strong-call-to-action.html": "Video Virality Score",
+  "the-role-of-emotion-in-video-virality.html": "The Role of Emotion in Video Virality",
+  "timing-of-video-release-and-virality.html": "Timing of Video Release and Its Impact on Virality",
+  "title-length-and-its-impact-on-video-virality.html": "Title Length and Its Impact on Video Virality",
+  "top-10-video-virality-tools.html": "Top 10 Tools to Track Video Virality",
+  "understanding-audience-feedback-for-virality.html": "Leveraging Audience Feedback to Boost Video Virality",
+  "understanding-audience-targeting.html": "Understanding Audience Targeting for Virality",
+  "understanding-video-virality-analytics.html": "Understanding Video Virality Analytics",
+  "user-generated-content-and-video-virality.html": "User-Generated Content: A Catalyst for Video Virality",
+  "viral-video-trends-in-2026.html": "Video Virality Score",
+  "what-is-video-virality-score.html": "Understanding Video Virality Score"
+ },
+ "pages": {
+  "understanding-video-virality-analytics.html": [
+   "pillar",
+   "understanding-video-virality-analytics.html"
+  ],
+  "the-role-of-analytics-in-video-virality.html": [
+   "alias",
+   "understanding-video-virality-analytics.html"
+  ],
+  "the-role-of-analytics-in-virality.html": [
+   "alias",
+   "understanding-video-virality-analytics.html"
+  ],
+  "using-analytics-to-enhance-virality.html": [
+   "alias",
+   "understanding-video-virality-analytics.html"
+  ],
+  "using-analytics-to-improve-virality-score.html": [
+   "alias",
+   "understanding-video-virality-analytics.html"
+  ],
+  "using-data-analytics-for-virality.html": [
+   "alias",
+   "understanding-video-virality-analytics.html"
+  ],
+  "analytics-and-the-future-of-video-virality.html": [
+   "alias",
+   "understanding-video-virality-analytics.html"
+  ],
+  "virality-scores-and-predictive-analytics.html": [
+   "alias",
+   "understanding-video-virality-analytics.html"
+  ],
+  "how-to-track-effective-virality-metrics.html": [
+   "alias",
+   "understanding-video-virality-analytics.html"
+  ],
+  "tracking-video-shares-for-virality-insights.html": [
+   "alias",
+   "understanding-video-virality-analytics.html"
+  ],
+  "understanding-video-metrics.html": [
+   "alias",
+   "understanding-video-virality-analytics.html"
+  ],
+  "analyzing-viral-video-metrics.html": [
+   "pillar",
+   "analyzing-viral-video-metrics.html"
+  ],
+  "analyzing-video-virality-score-metrics.html": [
+   "alias",
+   "analyzing-viral-video-metrics.html"
+  ],
+  "metrics-for-evaluating-video-virality.html": [
+   "alias",
+   "analyzing-viral-video-metrics.html"
+  ],
+  "understanding-viral-metrics-for-marketing.html": [
+   "alias",
+   "analyzing-viral-video-metrics.html"
+  ],
+  "engagement-metrics-and-virality.html": [
+   "alias",
+   "analyzing-viral-video-metrics.html"
+  ],
+  "examples-of-high-virality-scores.html": [
+   "alias",
+   "analyzing-viral-video-metrics.html"
+  ],
+  "what-is-video-virality-score.html": [
+   "pillar",
+   "what-is-video-virality-score.html"
+  ],
+  "understanding-video-virality-score.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "video-virality-score-basics.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "importance-of-video-virality-score.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "importance-of-virality-score.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "the-science-behind-video-virality-score.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "the-science-behind-video-virality.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "the-science-behind-virality.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "the-science-of-video-virality-score.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "the-science-of-shareability.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "understanding-video-virality-score-for-marketers.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "using-virality-score-for-marketing.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "impact-of-video-virality-score-on-content-strategy.html": [
+   "alias",
+   "what-is-video-virality-score.html"
+  ],
+  "how-to-calculate-video-virality-score.html": [
+   "pillar",
+   "how-to-calculate-video-virality-score.html"
+  ],
+  "calculating-virality-score.html": [
+   "alias",
+   "how-to-calculate-video-virality-score.html"
+  ],
+  "measuring-your-video-virality-score.html": [
+   "alias",
+   "how-to-calculate-video-virality-score.html"
+  ],
+  "video-virality-score-how-to-measure-it.html": [
+   "alias",
+   "how-to-calculate-video-virality-score.html"
+  ],
+  "measuring-vidops-virality-score.html": [
+   "alias",
+   "how-to-calculate-video-virality-score.html"
+  ],
+  "video-virality-score-tool-usage.html": [
+   "alias",
+   "how-to-calculate-video-virality-score.html"
+  ],
+  "how-to-improve-video-virality-score.html": [
+   "pillar",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "how-to-improve-your-virality-score.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "how-to-increase-your-video-virality-score.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "how-to-boost-video-virality.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "how-to-boost-your-video-virality-score.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "techniques-to-increase-video-virality-score.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "how-to-make-your-video-trending.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "viral-content-bursting-strategies.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "vetting-content-for-viral-potential.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "designing-for-viral-potential.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "measuring-viral-potential-in-content-marketing.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "nurturing-viral-video-ideas.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "testing-viral-video-concepts.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "creating-challenges-for-viral-content.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "content-creation-for-virality.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "viral-video-formulas.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "viral-video-content-ideas.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "viral-content-structure.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "viral-video-characteristics.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "video-virality-best-practices.html": [
+   "alias",
+   "how-to-improve-video-virality-score.html"
+  ],
+  "factors-affecting-video-virality-score.html": [
+   "pillar",
+   "factors-affecting-video-virality-score.html"
+  ],
+  "factors-affecting-virality-score.html": [
+   "alias",
+   "factors-affecting-video-virality-score.html"
+  ],
+  "top-factors-affecting-virality-score.html": [
+   "alias",
+   "factors-affecting-video-virality-score.html"
+  ],
+  "the-role-of-emotion-in-video-virality.html": [
+   "pillar",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "role-of-emotion-in-video-virality.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "the-role-of-emotion-in-virality.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "the-role-of-emotion-in-viral-video-content.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "emotional-appeal-in-viral-videos.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "emotional-content-and-virality-score.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "how-emotion-drives-video-virality-score.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "psychological-appeal-in-viral-content.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "psychological-triggers-in-viral-videos.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "the-psychology-behind-video-sharing-and-virality.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "the-psychology-of-sharing-videos.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "the-psychology-of-viral-videos.html": [
+   "alias",
+   "the-role-of-emotion-in-video-virality.html"
+  ],
+  "the-art-of-storytelling-in-viral-videos.html": [
+   "pillar",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "storytelling-techniques-for-viral-videos.html": [
+   "alias",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "the-importance-of-storytelling-in-viral-videos.html": [
+   "alias",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "the-power-of-storytelling-in-virality.html": [
+   "alias",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "the-value-of-storytelling-in-video-virality.html": [
+   "alias",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "narrative-techniques-in-viral-video.html": [
+   "alias",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "how-narrative-style-affects-video-virality.html": [
+   "alias",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "narrative-style-and-virality.html": [
+   "alias",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "the-impact-of-visual-stories-on-virality.html": [
+   "alias",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "the-role-of-visual-narratives-in-going-viral.html": [
+   "alias",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "educational-content-and-video-virality.html": [
+   "alias",
+   "the-art-of-storytelling-in-viral-videos.html"
+  ],
+  "optimizing-thumbnails-for-virality.html": [
+   "pillar",
+   "optimizing-thumbnails-for-virality.html"
+  ],
+  "creating-engaging-thumbnails-for-virality.html": [
+   "alias",
+   "optimizing-thumbnails-for-virality.html"
+  ],
+  "optimizing-video-thumbnails-for-virality.html": [
+   "alias",
+   "optimizing-thumbnails-for-virality.html"
+  ],
+  "the-art-of-video-thumbnails-and-virality.html": [
+   "alias",
+   "optimizing-thumbnails-for-virality.html"
+  ],
+  "the-importance-of-thumbnails-in-virality.html": [
+   "alias",
+   "optimizing-thumbnails-for-virality.html"
+  ],
+  "the-importance-of-video-thumbnails.html": [
+   "alias",
+   "optimizing-thumbnails-for-virality.html"
+  ],
+  "title-length-and-its-impact-on-video-virality.html": [
+   "pillar",
+   "title-length-and-its-impact-on-video-virality.html"
+  ],
+  "the-impact-of-title-on-virality.html": [
+   "alias",
+   "title-length-and-its-impact-on-video-virality.html"
+  ],
+  "the-boosting-effect-of-a-good-title.html": [
+   "alias",
+   "title-length-and-its-impact-on-video-virality.html"
+  ],
+  "the-role-of-copywriting-in-viral-videos.html": [
+   "alias",
+   "title-length-and-its-impact-on-video-virality.html"
+  ],
+  "crafting-captivating-intros-for-virality.html": [
+   "alias",
+   "title-length-and-its-impact-on-video-virality.html"
+  ],
+  "the-art-of-engaging-video-intros.html": [
+   "alias",
+   "title-length-and-its-impact-on-video-virality.html"
+  ],
+  "optimizing-video-length-for-virality.html": [
+   "pillar",
+   "optimizing-video-length-for-virality.html"
+  ],
+  "content-length-and-virality-relationship.html": [
+   "alias",
+   "optimizing-video-length-for-virality.html"
+  ],
+  "impact-of-video-length-on-virality.html": [
+   "alias",
+   "optimizing-video-length-for-virality.html"
+  ],
+  "how-to-use-video-length-for-virality.html": [
+   "alias",
+   "optimizing-video-length-for-virality.html"
+  ],
+  "video-length-and-virality-score.html": [
+   "alias",
+   "optimizing-video-length-for-virality.html"
+  ],
+  "mobile-optimization-for-viral-videos.html": [
+   "pillar",
+   "mobile-optimization-for-viral-videos.html"
+  ],
+  "the-importance-of-mobile-optimization-for-video-virality.html": [
+   "alias",
+   "mobile-optimization-for-viral-videos.html"
+  ],
+  "the-significance-of-mobile-optimization.html": [
+   "alias",
+   "mobile-optimization-for-viral-videos.html"
+  ],
+  "creating-shareable-video-content.html": [
+   "pillar",
+   "creating-shareable-video-content.html"
+  ],
+  "creating-shareable-content.html": [
+   "alias",
+   "creating-shareable-video-content.html"
+  ],
+  "how-to-create-shareable-video-content.html": [
+   "alias",
+   "creating-shareable-video-content.html"
+  ],
+  "maximizing-shareability-in-content.html": [
+   "alias",
+   "creating-shareable-video-content.html"
+  ],
+  "maximizing-shareability-in-video-content.html": [
+   "alias",
+   "creating-shareable-video-content.html"
+  ],
+  "user-generated-content-and-video-virality.html": [
+   "pillar",
+   "user-generated-content-and-video-virality.html"
+  ],
+  "user-generated-content-and-virality.html": [
+   "alias",
+   "user-generated-content-and-video-virality.html"
+  ],
+  "user-generated-content-virality.html": [
+   "alias",
+   "user-generated-content-and-video-virality.html"
+  ],
+  "the-power-of-user-generated-content-for-virality.html": [
+   "alias",
+   "user-generated-content-and-video-virality.html"
+  ],
+  "the-power-of-user-generated-content.html": [
+   "alias",
+   "user-generated-content-and-video-virality.html"
+  ],
+  "leveraging-user-generated-content-for-virality.html": [
+   "alias",
+   "user-generated-content-and-video-virality.html"
+  ],
+  "co-creating-videos-with-audience.html": [
+   "alias",
+   "user-generated-content-and-video-virality.html"
+  ],
+  "the-value-of-testimonials-in-video.html": [
+   "alias",
+   "user-generated-content-and-video-virality.html"
+  ],
+  "community-building-for-virality.html": [
+   "pillar",
+   "community-building-for-virality.html"
+  ],
+  "building-a-community-around-your-video.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "building-a-viral-video-community.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "building-encouraging-communities-for-video-sharing.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "community-engagement-and-video-virality.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "importance-of-community-engagement-for-virality.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "maximizing-engagement-for-virality.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "engaging-audience-with-video-virality.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "role-of-audience-engagement-in-virality.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "how-user-engagement-drives-virality-score.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "the-role-of-comments-in-video-engagement.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "the-power-of-friends-and-family-in-virality.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "the-social-impact-of-viral-videos.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "video-content-for-social-change.html": [
+   "alias",
+   "community-building-for-virality.html"
+  ],
+  "understanding-audience-feedback-for-virality.html": [
+   "pillar",
+   "understanding-audience-feedback-for-virality.html"
+  ],
+  "the-role-of-audience-feedback-in-virality.html": [
+   "alias",
+   "understanding-audience-feedback-for-virality.html"
+  ],
+  "the-effect-of-user-feedback-on-video-creation.html": [
+   "alias",
+   "understanding-audience-feedback-for-virality.html"
+  ],
+  "understanding-audience-targeting.html": [
+   "pillar",
+   "understanding-audience-targeting.html"
+  ],
+  "understanding-audience-personas-for-virality.html": [
+   "alias",
+   "understanding-audience-targeting.html"
+  ],
+  "understanding-the-audience-for-virality.html": [
+   "alias",
+   "understanding-audience-targeting.html"
+  ],
+  "customizing-video-content-for-audience.html": [
+   "alias",
+   "understanding-audience-targeting.html"
+  ],
+  "niche-audiences-and-virality.html": [
+   "alias",
+   "understanding-audience-targeting.html"
+  ],
+  "niche-marketing-and-video-virality.html": [
+   "alias",
+   "understanding-audience-targeting.html"
+  ],
+  "niche-targeting-strategies-for-virality.html": [
+   "alias",
+   "understanding-audience-targeting.html"
+  ],
+  "video-virality-in-niche-markets.html": [
+   "alias",
+   "understanding-audience-targeting.html"
+  ],
+  "collaboration-in-viral-video-production.html": [
+   "pillar",
+   "collaboration-in-viral-video-production.html"
+  ],
+  "collaborative-strategies-for-viral-video.html": [
+   "alias",
+   "collaboration-in-viral-video-production.html"
+  ],
+  "finding-viral-success-through-collaboration.html": [
+   "alias",
+   "collaboration-in-viral-video-production.html"
+  ],
+  "the-power-of-collaborations-in-virality.html": [
+   "alias",
+   "collaboration-in-viral-video-production.html"
+  ],
+  "creating-viral-influencer-content.html": [
+   "alias",
+   "collaboration-in-viral-video-production.html"
+  ],
+  "leveraging-influencers-for-video-virality.html": [
+   "pillar",
+   "leveraging-influencers-for-video-virality.html"
+  ],
+  "leveraging-influencers-for-viral-content.html": [
+   "alias",
+   "leveraging-influencers-for-video-virality.html"
+  ],
+  "leveraging-influencers-for-viral-video.html": [
+   "alias",
+   "leveraging-influencers-for-video-virality.html"
+  ],
+  "strategies-for-influencer-video-virality.html": [
+   "alias",
+   "leveraging-influencers-for-video-virality.html"
+  ],
+  "the-impact-of-influencers-on-virality.html": [
+   "alias",
+   "leveraging-influencers-for-video-virality.html"
+  ],
+  "exploring-the-role-of-social-media-in-video-virality.html": [
+   "pillar",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "the-effects-of-social-media-on-video-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "the-impact-of-social-media-on-video-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "the-role-of-social-media-in-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "video-virality-and-social-media-platforms.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "leveraging-social-media-for-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "social-media-strategies-for-viral-videos.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "social-media-strategies-for-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "cross-platform-promotions-for-viral-videos.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "tailoring-content-for-different-platforms.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "virality-score-across-different-platforms.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "how-to-use-hashtags-for-video-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "the-role-of-hashtags-in-video-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "the-role-of-hashtags-in-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "optimizing-video-tags-for-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "understanding-social-media-algorithms.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "understanding-algorithms-for-video-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "understanding-new-tiktok-algorithm-2026.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "why-did-my-tiktok-video-flop.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "the-effect-of-digital-marketing-on-video-virality.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "promoting-viral-videos.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "viral-video-advertising-techniques.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "maximizing-your-video-content-budget.html": [
+   "alias",
+   "exploring-the-role-of-social-media-in-video-virality.html"
+  ],
+  "timing-of-video-release-and-virality.html": [
+   "pillar",
+   "timing-of-video-release-and-virality.html"
+  ],
+  "time-of-day-and-video-virality.html": [
+   "alias",
+   "timing-of-video-release-and-virality.html"
+  ],
+  "the-impact-of-time-of-posting-on-video-virality.html": [
+   "alias",
+   "timing-of-video-release-and-virality.html"
+  ],
+  "timing-and-trends-in-viral-videos.html": [
+   "alias",
+   "timing-of-video-release-and-virality.html"
+  ],
+  "the-effect-of-holidays-on-video-virality.html": [
+   "alias",
+   "timing-of-video-release-and-virality.html"
+  ],
+  "viral-video-trends-in-2026.html": [
+   "pillar",
+   "viral-video-trends-in-2026.html"
+  ],
+  "2026-video-virality-trends-to-watch.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "understanding-video-virality-trends.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "exploring-video-trends-for-virality.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "analyzing-viral-video-trends.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "current-social-trends-in-video-virality.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "video-trends-and-future-outlook.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "the-evolution-of-video-virality.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "the-evolution-of-viral-video-marketing.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "history-of-viral-videos.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "the-future-of-video-virality.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "the-future-of-video-virality-score.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "future-of-video-virality-scores.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "using-ar-and-vr-in-viral-video-strategies.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "the-killer-combination-of-video-tools.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "viral-video-creation-tools.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "developing-a-viral-content-calendar.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "using-live-streaming-for-virality.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "the-benefits-of-live-streaming.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "engaging-audiences-with-video-end-screens.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "viral-video-editing-techniques.html": [
+   "alias",
+   "viral-video-trends-in-2026.html"
+  ],
+  "the-connection-between-trends-and-virality.html": [
+   "pillar",
+   "the-connection-between-trends-and-virality.html"
+  ],
+  "the-influence-of-trends-on-virality.html": [
+   "alias",
+   "the-connection-between-trends-and-virality.html"
+  ],
+  "the-role-of-trending-topics-in-virality.html": [
+   "alias",
+   "the-connection-between-trends-and-virality.html"
+  ],
+  "trending-topics-and-video-virality.html": [
+   "alias",
+   "the-connection-between-trends-and-virality.html"
+  ],
+  "using-trends-to-boost-virality.html": [
+   "alias",
+   "the-connection-between-trends-and-virality.html"
+  ],
+  "discovering-trending-topics-for-video-virality.html": [
+   "alias",
+   "the-connection-between-trends-and-virality.html"
+  ],
+  "colors-and-visual-design-in-viral-videos.html": [
+   "pillar",
+   "colors-and-visual-design-in-viral-videos.html"
+  ],
+  "the-role-of-color-in-video-virality.html": [
+   "alias",
+   "colors-and-visual-design-in-viral-videos.html"
+  ],
+  "mastering-visuals-for-virality.html": [
+   "alias",
+   "colors-and-visual-design-in-viral-videos.html"
+  ],
+  "visual-appeal-in-video-virality.html": [
+   "alias",
+   "colors-and-visual-design-in-viral-videos.html"
+  ],
+  "visual-elements-that-boost-virality-score.html": [
+   "alias",
+   "colors-and-visual-design-in-viral-videos.html"
+  ],
+  "the-impact-of-video-quality-on-virality.html": [
+   "pillar",
+   "the-impact-of-video-quality-on-virality.html"
+  ],
+  "the-impact-of-quality-on-virality-score.html": [
+   "alias",
+   "the-impact-of-video-quality-on-virality.html"
+  ],
+  "the-importance-of-quality-in-video-virality.html": [
+   "alias",
+   "the-impact-of-video-quality-on-virality.html"
+  ],
+  "can-music-affect-video-virality.html": [
+   "alias",
+   "the-impact-of-video-quality-on-virality.html"
+  ],
+  "cultural-impact-on-video-virality.html": [
+   "pillar",
+   "cultural-impact-on-video-virality.html"
+  ],
+  "cultural-influences-on-video-virality.html": [
+   "alias",
+   "cultural-impact-on-video-virality.html"
+  ],
+  "the-role-of-culture-in-viral-video.html": [
+   "alias",
+   "cultural-impact-on-video-virality.html"
+  ],
+  "geographical-influences-on-video-virality.html": [
+   "alias",
+   "cultural-impact-on-video-virality.html"
+  ],
+  "localization-and-video-virality-score.html": [
+   "alias",
+   "cultural-impact-on-video-virality.html"
+  ],
+  "localizing-content-for-video-virality.html": [
+   "alias",
+   "cultural-impact-on-video-virality.html"
+  ],
+  "impact-of-branding-on-video-virality.html": [
+   "pillar",
+   "impact-of-branding-on-video-virality.html"
+  ],
+  "the-role-of-branding-in-video-virality.html": [
+   "alias",
+   "impact-of-branding-on-video-virality.html"
+  ],
+  "video-virality-and-online-branding.html": [
+   "alias",
+   "impact-of-branding-on-video-virality.html"
+  ],
+  "measuring-brand-impact-through-virality.html": [
+   "alias",
+   "impact-of-branding-on-video-virality.html"
+  ],
+  "taking-advantage-of-brand-partnerships.html": [
+   "alias",
+   "impact-of-branding-on-video-virality.html"
+  ],
+  "case-studies-of-viral-videos.html": [
+   "pillar",
+   "case-studies-of-viral-videos.html"
+  ],
+  "analyzing-viral-video-case-studies.html": [
+   "alias",
+   "case-studies-of-viral-videos.html"
+  ],
+  "case-studies-in-viral-video-success.html": [
+   "alias",
+   "case-studies-of-viral-videos.html"
+  ],
+  "case-studies-in-viral-videos-and-their-scores.html": [
+   "alias",
+   "case-studies-of-viral-videos.html"
+  ],
+  "case-study-successful-viral-videos.html": [
+   "alias",
+   "case-studies-of-viral-videos.html"
+  ],
+  "dissecting-viral-video-campaigns.html": [
+   "alias",
+   "case-studies-of-viral-videos.html"
+  ],
+  "modern-viral-video-campaigns.html": [
+   "alias",
+   "case-studies-of-viral-videos.html"
+  ],
+  "lessons-from-viral-video-failures.html": [
+   "alias",
+   "case-studies-of-viral-videos.html"
+  ],
+  "top-viral-video-formats.html": [
+   "alias",
+   "case-studies-of-viral-videos.html"
+  ],
+  "analyzing-competitor-virality-scores.html": [
+   "pillar",
+   "analyzing-competitor-virality-scores.html"
+  ],
+  "analyzing-competitors-for-viral-video-strategy.html": [
+   "alias",
+   "analyzing-competitor-virality-scores.html"
+  ],
+  "analyzing-the-competition-for-virality.html": [
+   "alias",
+   "analyzing-competitor-virality-scores.html"
+  ],
+  "top-10-video-virality-tools.html": [
+   "pillar",
+   "top-10-video-virality-tools.html"
+  ],
+  "tools-for-measuring-video-virality-score.html": [
+   "alias",
+   "top-10-video-virality-tools.html"
+  ],
+  "top-tools-for-analyzing-video-virality-score.html": [
+   "alias",
+   "top-10-video-virality-tools.html"
+  ],
+  "virality-score-tracking-tools.html": [
+   "alias",
+   "top-10-video-virality-tools.html"
+  ],
+  "navigating-video-regulations-and-compliance.html": [
+   "pillar",
+   "navigating-video-regulations-and-compliance.html"
+  ],
+  "the-importance-of-a-strong-call-to-action.html": [
+   "pillar",
+   "the-importance-of-a-strong-call-to-action.html"
+  ],
+  "the-benefits-of-a-strong-call-to-action.html": [
+   "alias",
+   "the-importance-of-a-strong-call-to-action.html"
+  ],
+  "benefits-of-viral-video-strategy.html": [
+   "alias",
+   "the-importance-of-a-strong-call-to-action.html"
+  ],
+  "common-mistakes-in-creating-viral-videos.html": [
+   "pillar",
+   "common-mistakes-in-creating-viral-videos.html"
+  ],
+  "genres-that-boost-video-virality.html": [
+   "pillar",
+   "genres-that-boost-video-virality.html"
+  ]
+ }
+}
