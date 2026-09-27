@@ -1,0 +1,32 @@
+/* Retro Wave Editorial nav/footer — Proposal B, site-wide */
+.rw-topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:#1e1b4b;color:#fff;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;
+  padding:14px 5vw;transition:padding .3s ease,box-shadow .3s}
+.rw-topbar.rw-small{padding:7px 5vw;box-shadow:0 6px 24px rgba(30,27,75,.35)}
+.rw-logo{font-weight:900;font-size:clamp(17px,2.2vw,24px);letter-spacing:.5px;color:#fff;text-decoration:none;transition:font-size .3s}
+.rw-topbar.rw-small .rw-logo{font-size:18px}
+.rw-logo em{font-style:normal;color:#facc15}
+.rw-topbar nav ul{display:flex;flex-wrap:wrap;gap:clamp(8px,2vw,26px);list-style:none;margin:0;padding:0}
+.rw-topbar nav a{color:#fff;text-decoration:none;font-size:15px;position:relative;padding:6px 2px;display:inline-block}
+.rw-topbar nav a::before{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="6"><path d="M0 3 Q3 0 6 3 T12 3 T18 3 T24 3" fill="none" stroke="%23facc15" stroke-width="2"/></svg>') repeat-x left bottom;
+  transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.rw-topbar nav a:hover{color:#facc15}
+.rw-topbar nav a:hover::before{transform:scaleX(1)}
+.rw-strip{position:fixed;top:58px;left:0;right:0;z-index:59;background:#facc15;color:#1e1b4b;overflow:hidden;white-space:nowrap;font:700 12px system-ui;padding:4px 0;transition:top .3s}
+.rw-strip .rw-track{display:inline-block;animation:rw-marq 22s linear infinite}
+.rw-topbar.rw-small+.rw-strip{top:44px}
+@keyframes rw-marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.rw-wavefoot{position:fixed;bottom:0;left:0;right:0;z-index:60;background:#1e1b4b;color:#fff;padding:22px 5vw 16px}
+.rw-wavefoot svg.rw-waves{position:absolute;top:-38px;left:0;width:100%;height:40px;display:block}
+.rw-wavefoot svg.rw-waves path{animation:rw-bob 6s ease-in-out infinite alternate}
+.rw-wavefoot svg.rw-waves path:nth-child(2){animation-duration:8s;opacity:.5}
+@keyframes rw-bob{from{transform:translateX(0)}to{transform:translateX(-24px)}}
+.rw-btnrow{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.rw-btnrow a{color:#fff;text-decoration:none;font:600 13px system-ui;border:1.5px solid rgba(255,255,255,.4);border-radius:10px;padding:8px 16px;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s,border-color .2s,color .2s}
+.rw-btnrow a:hover{transform:translateY(-5px) rotate(-1.5deg);background:#facc15;border-color:#facc15;color:#1e1b4b}
+.rw-btnrow a:nth-child(even):hover{background:#fb7185;border-color:#fb7185}
+body.rw-body{padding-bottom:120px !important}
+@media (max-width:640px){.rw-strip{display:none}.rw-topbar{padding:10px 4vw}.rw-topbar.rw-small{padding:8px 4vw}}
+@media (prefers-reduced-motion:reduce){.rw-strip .rw-track,.rw-wavefoot svg.rw-waves path{animation:none}}
