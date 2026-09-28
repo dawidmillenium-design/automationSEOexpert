@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matcha Maya Blog: 220 Creator & Nomad Interviews</title>
+<meta name="description" content="Access 220 creator interviews from digital nomads, podcasters, and remote workers in global cities worldwide.">
+<link rel="canonical" href="https://dawidmillenium-design.github.io/matcha-maya-blog/index2.html">
+<style>
+/* ===== Modern CSS design system — oklch colors, fluid type, scroll-driven animations ===== */
+@property --scroll { syntax:'<percentage>'; initial-value:0%; inherits:true; }
+@property --glow { syntax:'<number>'; initial-value:0; inherits:true; }
+
+:root {
+  --paper: oklch(0.985 0.006 145);
+  --ink: oklch(0.27 0.02 150);
+  --matcha: oklch(0.45 0.09 155);
+  --matcha-deep: oklch(0.33 0.09 158);
+  --leaf: oklch(0.72 0.13 150);
+  --amber: oklch(0.78 0.14 85);
+  --card: white;
+  --line: oklch(0.88 0.02 150);
+  --shadow: 0 8px 30px color-mix(in oklab, var(--matcha-deep) 12%, transparent);
+  --r: 14px;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  background: var(--paper); color: var(--ink); line-height:1.6;
+  animation: readprogress linear both; animation-timeline: scroll(root);
+}
+@keyframes readprogress { to { --scroll:100%; } }
+
+/* Reading progress bar (pure CSS scroll-driven) */
+.progress {
+  position:fixed; inset:0 0 auto 0; height:4px; z-index:1100; pointer-events:none;
+  background:linear-gradient(90deg, var(--leaf), var(--amber));
+  transform: scaleX(var(--scroll)); transform-origin:0 50%;
+}
+
+/* Sticky header that shrinks on scroll (container query style) */
+.site-header {
+  position:sticky; top:0; z-index:1000;
+  background: color-mix(in oklab, var(--matcha-deep) 92%, black);
+  color:white; box-shadow:var(--shadow);
+  transition: padding .3s cubic-bezier(.2,.9,.3,1.2);
+}
+.nav-container { max-width:1200px; margin:auto; padding:16px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.brand-logo { color:#fff; text-decoration:none; font-weight:800; letter-spacing:.06em; font-size:clamp(1.05rem,2.4vw,1.35rem); }
+.main-nav ul { display:flex; gap:8px; list-style:none; flex-wrap:wrap; }
+.main-nav a {
+  color:#fff; text-decoration:none; font-weight:600; font-size:.85rem;
+  padding:7px 14px; border-radius:999px; border:1px solid rgb(255 255 255 / .25);
+  background: rgb(255 255 255 / .08);
+  transition: translate .25s cubic-bezier(.2,.9,.3,1.4), background .25s, color .25s;
+}
+.main-nav a:hover { background:#fff; color:var(--matcha-deep); translate:0 -2px; }
+.main-nav a.active { background:#fff; color:var(--matcha-deep); font-weight:700; }
+
+/* Hero with slow drifting gradient (latest CSS animated gradients) */
+.hero {
+  position:relative; overflow:hidden; text-align:center;
+  padding: clamp(40px,7vw,80px) 20px clamp(34px,5vw,60px);
+  background:
+    radial-gradient(1200px 500px at 10% -20%, color-mix(in oklab, var(--leaf) 30%, transparent), transparent 60%),
+    radial-gradient(900px 420px at 95% -10%, color-mix(in oklab, var(--amber) 26%, transparent), transparent 60%),
+    var(--paper);
+}
+.hero h1 { font-size: clamp(1.7rem, 5vw, 2.7rem); color: var(--matcha-deep); letter-spacing:-.02em; }
+.hero p { max-width:720px; margin:12px auto 18px; font-size:clamp(1rem,2.2vw,1.15rem); color:color-mix(in oklab, var(--ink) 80%, transparent); }
+.badge-bar {
+  display:inline-block; font-weight:700; color:var(--matcha-deep);
+  background:rgb(255 255 255 / .75); border:1px solid var(--line);
+  padding:8px 18px; border-radius:999px; backdrop-filter: blur(6px);
+  animation: floaty 5s ease-in-out infinite alternate;
+}
+@keyframes floaty { to { translate:0 -6px; } }
+
+.container { max-width:1200px; margin:34px auto; padding:0 20px; }
+
+/* Search + alphabet filter */
+.tools { position:sticky; top:64px; z-index:900; margin-bottom:22px;
+  background: color-mix(in oklab, var(--paper) 80%, transparent); backdrop-filter: blur(10px) saturate(1.3);
+  border:1px solid var(--line); border-radius:var(--r); padding:14px 16px; box-shadow:var(--shadow); }
+.tools input { width:100%; padding:13px 20px; border-radius:999px; border:2px solid var(--line); font-size:1rem; outline:none; background:#fff;
+  transition: border-color .2s, box-shadow .2s; }
+.tools input:focus { border-color:var(--matcha); box-shadow:0 0 0 4px color-mix(in oklab, var(--leaf) 25%, transparent); }
+.alpha { display:flex; flex-wrap:wrap; gap:4px; margin-top:10px; justify-content:center; }
+.alpha a { font-size:.78rem; font-weight:700; color:var(--matcha-deep); text-decoration:none; padding:3px 9px; border-radius:8px; background:#fff; border:1px solid var(--line);
+  transition: background .2s, color .2s, translate .2s; }
+.alpha a:hover, .alpha a.on { background:var(--matcha-deep); color:#fff; translate:0 -2px; }
+
+/* Section titles reveal on scroll (animation-timeline: view()) */
+.section-title { font-size:clamp(1.25rem,3vw,1.6rem); color:var(--matcha-deep); margin:34px 0 14px; }
+.reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% cover 28%; }
+@keyframes rise { from { opacity:0; translate:0 26px; scale:.98; } to { opacity:1; } }
+
+/* Card grid — container queries make cards adapt to their own column width */
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr)); gap:14px; container-type:inline-size; }
+.card {
+  container-type:inline-size;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--r);
+  padding:16px 18px; list-style:none; display:flex; flex-direction:column; gap:10px; justify-content:space-between;
+  transition: translate .3s cubic-bezier(.2,.9,.3,1.2), box-shadow .3s, border-color .3s;
+}
+.card:hover { translate:0 -4px; border-color:var(--matcha); box-shadow:var(--shadow); }
+.card h3 { font-size:1rem; color:var(--ink); letter-spacing:-.01em; }
+.minis { display:flex; gap:8px; flex-wrap:wrap; }
+.mini {
+  flex:1 1 auto; text-align:center; text-decoration:none; font-weight:600; font-size:.82rem;
+  color:var(--matcha-deep); background:color-mix(in oklab, var(--leaf) 16%, white);
+  border:1px solid color-mix(in oklab, var(--leaf) 40%, white);
+  padding:8px 10px; border-radius:10px;
+  transition: background .2s, color .2s, translate .2s cubic-bezier(.2,.9,.3,1.4);
+}
+.mini:hover { background:var(--matcha-deep); color:#fff; translate:0 -2px; }
+/* Container query: when the card is narrow, stack buttons full width */
+@container (max-width: 210px) { .minis { flex-direction:column; } .mini { flex:none; } }
+
+.hidden { display:none !important; }
+.count { font-size:.85rem; color:color-mix(in oklab,var(--ink) 65%,transparent); }
+
+/* Footer */
+footer { background: color-mix(in oklab, var(--matcha-deep) 92%, black); color:#fff; text-align:center; padding:30px 20px; margin-top:60px; }
+footer a { color:#fff; text-decoration:underline; font-weight:600; margin:0 7px; }
+footer a:hover { color:var(--amber); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
+  html { scroll-behavior:auto; }
+}
+</style>
+</head>
+<body id="top">
+<div class="progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="brand-logo">MATCHA MAYA</a>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index2.html" class="active" aria-current="page">220 Interviews</a></li>
+        <li><a href="comparison.html">City Comparisons</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>🎙️ 220 Global Creator Interviews</h1>
+  <p>Every city conversation in one portal — digital-nomad coworking guides and creator/podcaster interviews across the global destination network.</p>
+  <span class="badge-bar">🎉 220 / 220 Interviews Complete</span>
+</section>
+
+<main class="container">
+  <div class="tools reveal">
+    <input id="q" type="search" placeholder="Search a city… e.g. Lisbon, Tokyo, Medellín" aria-label="Search interviews" autocomplete="off">
+    <div class="alpha" id="alpha"><a href="#" data-letter="A">A</a><a href="#" data-letter="B">B</a><a href="#" data-letter="C">C</a><a href="#" data-letter="D">D</a><a href="#" data-letter="E">E</a><a href="#" data-letter="F">F</a><a href="#" data-letter="G">G</a><a href="#" data-letter="H">H</a><a href="#" data-letter="I">I</a><a href="#" data-letter="J">J</a><a href="#" data-letter="K">K</a><a href="#" data-letter="L">L</a><a href="#" data-letter="M">M</a><a href="#" data-letter="N">N</a><a href="#" data-letter="O">O</a><a href="#" data-letter="P">P</a><a href="#" data-letter="Q">Q</a><a href="#" data-letter="R">R</a><a href="#" data-letter="S">S</a><a href="#" data-letter="T">T</a><a href="#" data-letter="U">U</a><a href="#" data-letter="V">V</a><a href="#" data-letter="W">W</a><a href="#" data-letter="Y">Y</a><a href="#" data-letter="Z">Z</a></div>
+    <p class="count" id="count" aria-live="polite"></p>
+  </div>
+
+  <h2 class="section-title reveal">🌍 Cities A–Z</h2>
+  <p class="reveal" style="margin-bottom:14px;color:color-mix(in oklab,var(--ink) 70%,transparent)">One card per city — no duplicates. Open the interview or the coworking guide directly.</p>
+  <ul class="grid" id="cityGrid">
+<li class="card" data-name="abu dhabi" data-letter="A">
+        <h3>Abu Dhabi</h3>
+        <div class="minis"><a class="mini" href="abu-dhabi-coworking-guide.html" aria-label="Coworking guide for Abu Dhabi">📖 Abu Dhabi coworking guide</a><a class="mini" href="abu-dhabi-podcast-proposal.html" aria-label="Creator interview from Abu Dhabi">🎙️ Abu Dhabi interview</a></div>
+      </li>
+<li class="card" data-name="accra" data-letter="A">
+        <h3>Accra</h3>
+        <div class="minis"><a class="mini" href="accra-coworking-guide.html" aria-label="Coworking guide for Accra">📖 Accra coworking guide</a><a class="mini" href="accra-podcast-proposal.html" aria-label="Creator interview from Accra">🎙️ Accra interview</a></div>
+      </li>
+<li class="card" data-name="addis ababa" data-letter="A">
+        <h3>Addis Ababa</h3>
+        <div class="minis"><a class="mini" href="addis-ababa-coworking-guide.html" aria-label="Coworking guide for Addis Ababa">📖 Addis Ababa coworking guide</a><a class="mini" href="addis-ababa-podcast-proposal.html" aria-label="Creator interview from Addis Ababa">🎙️ Addis Ababa interview</a></div>
+      </li>
+<li class="card" data-name="al ula" data-letter="A">
+        <h3>Al Ula</h3>
+        <div class="minis"><a class="mini" href="al-ula-podcast-proposal.html" aria-label="Creator interview from Al Ula">🎙️ Al Ula interview</a></div>
+      </li>
+<li class="card" data-name="albuquerque" data-letter="A">
+        <h3>Albuquerque</h3>
+        <div class="minis"><a class="mini" href="albuquerque-coworking-guide.html" aria-label="Coworking guide for Albuquerque">📖 Albuquerque coworking guide</a><a class="mini" href="albuquerque-podcast-proposal.html" aria-label="Creator interview from Albuquerque">🎙️ Albuquerque interview</a></div>
+      </li>
+<li class="card" data-name="alexandria" data-letter="A">
+        <h3>Alexandria</h3>
+        <div class="minis"><a class="mini" href="alexandria-coworking-guide.html" aria-label="Coworking guide for Alexandria">📖 Alexandria coworking guide</a><a class="mini" href="alexandria-podcast-proposal.html" aria-label="Creator interview from Alexandria">🎙️ Alexandria interview</a></div>
+      </li>
+<li class="card" data-name="algiers" data-letter="A">
+        <h3>Algiers</h3>
+        <div class="minis"><a class="mini" href="algiers-coworking-guide.html" aria-label="Coworking guide for Algiers">📖 Algiers coworking guide</a><a class="mini" href="algiers-podcast-proposal.html" aria-label="Creator interview from Algiers">🎙️ Algiers interview</a></div>
+      </li>
+<li class="card" data-name="almaty" data-letter="A">
+        <h3>Almaty</h3>
+        <div class="minis"><a class="mini" href="almaty-coworking-guide.html" aria-label="Coworking guide for Almaty">📖 Almaty coworking guide</a><a class="mini" href="almaty-podcast-proposal.html" aria-label="Creator interview from Almaty">🎙️ Almaty interview</a></div>
+      </li>
+<li class="card" data-name="amman" data-letter="A">
+        <h3>Amman</h3>
+        <div class="minis"><a class="mini" href="amman-coworking-guide.html" aria-label="Coworking guide for Amman">📖 Amman coworking guide</a><a class="mini" href="amman-podcast-proposal.html" aria-label="Creator interview from Amman">🎙️ Amman interview</a></div>
+      </li>
+<li class="card" data-name="amsterdam" data-letter="A">
+        <h3>Amsterdam</h3>
+        <div class="minis"><a class="mini" href="amsterdam-coworking-guide.html" aria-label="Coworking guide for Amsterdam">📖 Amsterdam coworking guide</a><a class="mini" href="amsterdam-podcast-proposal.html" aria-label="Creator interview from Amsterdam">🎙️ Amsterdam interview</a></div>
+      </li>
+<li class="card" data-name="ankara" data-letter="A">
+        <h3>Ankara</h3>
+        <div class="minis"><a class="mini" href="ankara-podcast-proposal.html" aria-label="Creator interview from Ankara">🎙️ Ankara interview</a></div>
+      </li>
+<li class="card" data-name="antalya" data-letter="A">
+        <h3>Antalya</h3>
+        <div class="minis"><a class="mini" href="antalya-podcast-proposal.html" aria-label="Creator interview from Antalya">🎙️ Antalya interview</a></div>
+      </li>
+<li class="card" data-name="antananarivo" data-letter="A">
+        <h3>Antananarivo</h3>
+        <div class="minis"><a class="mini" href="antananarivo-podcast-proposal.html" aria-label="Creator interview from Antananarivo">🎙️ Antananarivo interview</a></div>
+      </li>
+<li class="card" data-name="antwerp" data-letter="A">
+        <h3>Antwerp</h3>
+        <div class="minis"><a class="mini" href="antwerp-coworking-guide.html" aria-label="Coworking guide for Antwerp">📖 Antwerp coworking guide</a><a class="mini" href="antwerp-podcast-proposal.html" aria-label="Creator interview from Antwerp">🎙️ Antwerp interview</a></div>
+      </li>
+<li class="card" data-name="aqaba" data-letter="A">
+        <h3>Aqaba</h3>
+        <div class="minis"><a class="mini" href="aqaba-podcast-proposal.html" aria-label="Creator interview from Aqaba">🎙️ Aqaba interview</a></div>
+      </li>
+<li class="card" data-name="arequipa" data-letter="A">
+        <h3>Arequipa</h3>
+        <div class="minis"><a class="mini" href="arequipa-podcast-proposal.html" aria-label="Creator interview from Arequipa">🎙️ Arequipa interview</a></div>
+      </li>
+<li class="card" data-name="ashgabat" data-letter="A">
+        <h3>Ashgabat</h3>
+        <div class="minis"><a class="mini" href="ashgabat-coworking-guide.html" aria-label="Coworking guide for Ashgabat">📖 Ashgabat coworking guide</a><a class="mini" href="ashgabat-podcast-proposal.html" aria-label="Creator interview from Ashgabat">🎙️ Ashgabat interview</a></div>
+      </li>
+<li class="card" data-name="astana" data-letter="A">
+        <h3>Astana</h3>
+        <div class="minis"><a class="mini" href="astana-podcast-proposal.html" aria-label="Creator interview from Astana">🎙️ Astana interview</a></div>
+      </li>
+<li class="card" data-name="asuncion" data-letter="A">
+        <h3>Asuncion</h3>
+        <div class="minis"><a class="mini" href="asuncion-coworking-guide.html" aria-label="Coworking guide for Asuncion">📖 Asuncion coworking guide</a><a class="mini" href="asuncion-podcast-proposal.html" aria-label="Creator interview from Asuncion">🎙️ Asuncion interview</a></div>
+      </li>
+<li class="card" data-name="athens" data-letter="A">
+        <h3>Athens</h3>
+        <div class="minis"><a class="mini" href="athens-coworking-guide.html" aria-label="Coworking guide for Athens">📖 Athens coworking guide</a><a class="mini" href="athens-podcast-proposal.html" aria-label="Creator interview from Athens">🎙️ Athens interview</a></div>
+      </li>
+<li class="card" data-name="atlanta" data-letter="A">
+        <h3>Atlanta</h3>
+        <div class="minis"><a class="mini" href="atlanta-coworking-guide.html" aria-label="Coworking guide for Atlanta">📖 Atlanta coworking guide</a><a class="mini" href="atlanta-podcast-proposal.html" aria-label="Creator interview from Atlanta">🎙️ Atlanta interview</a></div>
+      </li>
+<li class="card" data-name="auckland" data-letter="A">
+        <h3>Auckland</h3>
+        <div class="minis"><a class="mini" href="auckland-coworking-guide.html" aria-label="Coworking guide for Auckland">📖 Auckland coworking guide</a><a class="mini" href="auckland-podcast-proposal.html" aria-label="Creator interview from Auckland">🎙️ Auckland interview</a></div>
+      </li>
+<li class="card" data-name="austin" data-letter="A">
+        <h3>Austin</h3>
+        <div class="minis"><a class="mini" href="austin-coworking-guide.html" aria-label="Coworking guide for Austin">📖 Austin coworking guide</a><a class="mini" href="austin-podcast-proposal.html" aria-label="Creator interview from Austin">🎙️ Austin interview</a></div>
+      </li>
+<li class="card" data-name="baku" data-letter="B">
+        <h3>Baku</h3>
+        <div class="minis"><a class="mini" href="baku-coworking-guide.html" aria-label="Coworking guide for Baku">📖 Baku coworking guide</a><a class="mini" href="baku-podcast-proposal.html" aria-label="Creator interview from Baku">🎙️ Baku interview</a></div>
+      </li>
+<li class="card" data-name="bali" data-letter="B">
+        <h3>Bali</h3>
+        <div class="minis"><a class="mini" href="bali-podcast-proposal.html" aria-label="Creator interview from Bali">🎙️ Bali interview</a></div>
+      </li>
+<li class="card" data-name="bangalore" data-letter="B">
+        <h3>Bangalore</h3>
+        <div class="minis"><a class="mini" href="bangalore-coworking-guide.html" aria-label="Coworking guide for Bangalore">📖 Bangalore coworking guide</a><a class="mini" href="bangalore-podcast-proposal.html" aria-label="Creator interview from Bangalore">🎙️ Bangalore interview</a></div>
+      </li>
+<li class="card" data-name="bangkok" data-letter="B">
+        <h3>Bangkok</h3>
+        <div class="minis"><a class="mini" href="bangkok-coworking-guide.html" aria-label="Coworking guide for Bangkok">📖 Bangkok coworking guide</a><a class="mini" href="bangkok-podcast-proposal.html" aria-label="Creator interview from Bangkok">🎙️ Bangkok interview</a></div>
+      </li>
+<li class="card" data-name="barcelona" data-letter="B">
+        <h3>Barcelona</h3>
+        <div class="minis"><a class="mini" href="barcelona-coworking-guide.html" aria-label="Coworking guide for Barcelona">📖 Barcelona coworking guide</a><a class="mini" href="barcelona-podcast-proposal.html" aria-label="Creator interview from Barcelona">🎙️ Barcelona interview</a></div>
+      </li>
+<li class="card" data-name="bariloche" data-letter="B">
+        <h3>Bariloche</h3>
+        <div class="minis"><a class="mini" href="bariloche-podcast-proposal.html" aria-label="Creator interview from Bariloche">🎙️ Bariloche interview</a></div>
+      </li>
+<li class="card" data-name="batumi" data-letter="B">
+        <h3>Batumi</h3>
+        <div class="minis"><a class="mini" href="batumi-podcast-proposal.html" aria-label="Creator interview from Batumi">🎙️ Batumi interview</a></div>
+      </li>
+<li class="card" data-name="beijing" data-letter="B">
+        <h3>Beijing</h3>
+        <div class="minis"><a class="mini" href="beijing-coworking-guide.html" aria-label="Coworking guide for Beijing">📖 Beijing coworking guide</a><a class="mini" href="beijing-podcast-proposal.html" aria-label="Creator interview from Beijing">🎙️ Beijing interview</a></div>
+      </li>
+<li class="card" data-name="beirut" data-letter="B">
+        <h3>Beirut</h3>
+        <div class="minis"><a class="mini" href="beirut-coworking-guide.html" aria-label="Coworking guide for Beirut">📖 Beirut coworking guide</a><a class="mini" href="beirut-podcast-proposal.html" aria-label="Creator interview from Beirut">🎙️ Beirut interview</a></div>
+      </li>
+<li class="card" data-name="belfast" data-letter="B">
+        <h3>Belfast</h3>
+        <div class="minis"><a class="mini" href="belfast-podcast-proposal.html" aria-label="Creator interview from Belfast">🎙️ Belfast interview</a></div>
+      </li>
+<li class="card" data-name="belgrade" data-letter="B">
+        <h3>Belgrade</h3>
+        <div class="minis"><a class="mini" href="belgrade-coworking-guide.html" aria-label="Coworking guide for Belgrade">📖 Belgrade coworking guide</a><a class="mini" href="belgrade-podcast-proposal.html" aria-label="Creator interview from Belgrade">🎙️ Belgrade interview</a></div>
+      </li>
+<li class="card" data-name="bengaluru" data-letter="B">
+        <h3>Bengaluru</h3>
+        <div class="minis"><a class="mini" href="bengaluru-podcast-proposal.html" aria-label="Creator interview from Bengaluru">🎙️ Bengaluru interview</a></div>
+      </li>
+<li class="card" data-name="berlin" data-letter="B">
+        <h3>Berlin</h3>
+        <div class="minis"><a class="mini" href="berlin-coworking-guide.html" aria-label="Coworking guide for Berlin">📖 Berlin coworking guide</a><a class="mini" href="berlin-podcast-proposal.html" aria-label="Creator interview from Berlin">🎙️ Berlin interview</a></div>
+      </li>
+<li class="card" data-name="bern" data-letter="B">
+        <h3>Bern</h3>
+        <div class="minis"><a class="mini" href="bern-coworking-guide.html" aria-label="Coworking guide for Bern">📖 Bern coworking guide</a><a class="mini" href="bern-podcast-proposal.html" aria-label="Creator interview from Bern">🎙️ Bern interview</a></div>
+      </li>
+<li class="card" data-name="birmingham" data-letter="B">
+        <h3>Birmingham</h3>
+        <div class="minis"><a class="mini" href="birmingham-coworking-guide.html" aria-label="Coworking guide for Birmingham">📖 Birmingham coworking guide</a><a class="mini" href="birmingham-podcast-proposal.html" aria-label="Creator interview from Birmingham">🎙️ Birmingham interview</a></div>
+      </li>
+<li class="card" data-name="bishkek" data-letter="B">
+        <h3>Bishkek</h3>
+        <div class="minis"><a class="mini" href="bishkek-coworking-guide.html" aria-label="Coworking guide for Bishkek">📖 Bishkek coworking guide</a><a class="mini" href="bishkek-podcast-proposal.html" aria-label="Creator interview from Bishkek">🎙️ Bishkek interview</a></div>
+      </li>
+<li class="card" data-name="bodrum" data-letter="B">
+        <h3>Bodrum</h3>
+        <div class="minis"><a class="mini" href="bodrum-podcast-proposal.html" aria-label="Creator interview from Bodrum">🎙️ Bodrum interview</a></div>
+      </li>
+<li class="card" data-name="bogota" data-letter="B">
+        <h3>Bogota</h3>
+        <div class="minis"><a class="mini" href="bogota-coworking-guide.html" aria-label="Coworking guide for Bogota">📖 Bogota coworking guide</a><a class="mini" href="bogota-podcast-proposal.html" aria-label="Creator interview from Bogota">🎙️ Bogota interview</a></div>
+      </li>
+<li class="card" data-name="boston" data-letter="B">
+        <h3>Boston</h3>
+        <div class="minis"><a class="mini" href="boston-coworking-guide.html" aria-label="Coworking guide for Boston">📖 Boston coworking guide</a><a class="mini" href="boston-podcast-proposal.html" aria-label="Creator interview from Boston">🎙️ Boston interview</a></div>
+      </li>
+<li class="card" data-name="brampton" data-letter="B">
+        <h3>Brampton</h3>
+        <div class="minis"><a class="mini" href="brampton-coworking-guide.html" aria-label="Coworking guide for Brampton">📖 Brampton coworking guide</a><a class="mini" href="brampton-podcast-proposal.html" aria-label="Creator interview from Brampton">🎙️ Brampton interview</a></div>
+      </li>
+<li class="card" data-name="bratislava" data-letter="B">
+        <h3>Bratislava</h3>
+        <div class="minis"><a class="mini" href="bratislava-coworking-guide.html" aria-label="Coworking guide for Bratislava">📖 Bratislava coworking guide</a><a class="mini" href="bratislava-podcast-proposal.html" aria-label="Creator interview from Bratislava">🎙️ Bratislava interview</a></div>
+      </li>
+<li class="card" data-name="bremen" data-letter="B">
+        <h3>Bremen</h3>
+        <div class="minis"><a class="mini" href="bremen-coworking-guide.html" aria-label="Coworking guide for Bremen">📖 Bremen coworking guide</a><a class="mini" href="bremen-podcast-proposal.html" aria-label="Creator interview from Bremen">🎙️ Bremen interview</a></div>
+      </li>
+<li class="card" data-name="bridgetown" data-letter="B">
+        <h3>Bridgetown</h3>
+        <div class="minis"><a class="mini" href="bridgetown-coworking-guide.html" aria-label="Coworking guide for Bridgetown">📖 Bridgetown coworking guide</a><a class="mini" href="bridgetown-podcast-proposal.html" aria-label="Creator interview from Bridgetown">🎙️ Bridgetown interview</a></div>
+      </li>
+<li class="card" data-name="brisbane" data-letter="B">
+        <h3>Brisbane</h3>
+        <div class="minis"><a class="mini" href="brisbane-coworking-guide.html" aria-label="Coworking guide for Brisbane">📖 Brisbane coworking guide</a><a class="mini" href="brisbane-podcast-proposal.html" aria-label="Creator interview from Brisbane">🎙️ Brisbane interview</a></div>
+      </li>
+<li class="card" data-name="bristol" data-letter="B">
+        <h3>Bristol</h3>
+        <div class="minis"><a class="mini" href="bristol-coworking-guide.html" aria-label="Coworking guide for Bristol">📖 Bristol coworking guide</a><a class="mini" href="bristol-podcast-proposal.html" aria-label="Creator interview from Bristol">🎙️ Bristol interview</a></div>
+      </li>
+<li class="card" data-name="brussels" data-letter="B">
+        <h3>Brussels</h3>
+        <div class="minis"><a class="mini" href="brussels-coworking-guide.html" aria-label="Coworking guide for Brussels">📖 Brussels coworking guide</a><a class="mini" href="brussels-podcast-proposal.html" aria-label="Creator interview from Brussels">🎙️ Brussels interview</a></div>
+      </li>
+<li class="card" data-name="bucharest" data-letter="B">
+        <h3>Bucharest</h3>
+        <div class="minis"><a class="mini" href="bucharest-podcast-proposal.html" aria-label="Creator interview from Bucharest">🎙️ Bucharest interview</a></div>
+      </li>
+<li class="card" data-name="budapest" data-letter="B">
+        <h3>Budapest</h3>
+        <div class="minis"><a class="mini" href="budapest-coworking-guide.html" aria-label="Coworking guide for Budapest">📖 Budapest coworking guide</a><a class="mini" href="budapest-podcast-proposal.html" aria-label="Creator interview from Budapest">🎙️ Budapest interview</a></div>
+      </li>
+<li class="card" data-name="buenos aires" data-letter="B">
+        <h3>Buenos Aires</h3>
+        <div class="minis"><a class="mini" href="buenos-aires-coworking-guide.html" aria-label="Coworking guide for Buenos Aires">📖 Buenos Aires coworking guide</a><a class="mini" href="buenos-aires-podcast-proposal.html" aria-label="Creator interview from Buenos Aires">🎙️ Buenos Aires interview</a></div>
+      </li>
+<li class="card" data-name="bursa" data-letter="B">
+        <h3>Bursa</h3>
+        <div class="minis"><a class="mini" href="bursa-podcast-proposal.html" aria-label="Creator interview from Bursa">🎙️ Bursa interview</a></div>
+      </li>
+<li class="card" data-name="busan" data-letter="B">
+        <h3>Busan</h3>
+        <div class="minis"><a class="mini" href="busan-coworking-guide.html" aria-label="Coworking guide for Busan">📖 Busan coworking guide</a><a class="mini" href="busan-podcast-proposal.html" aria-label="Creator interview from Busan">🎙️ Busan interview</a></div>
+      </li>
+<li class="card" data-name="cairo" data-letter="C">
+        <h3>Cairo</h3>
+        <div class="minis"><a class="mini" href="cairo-coworking-guide.html" aria-label="Coworking guide for Cairo">📖 Cairo coworking guide</a><a class="mini" href="cairo-podcast-proposal.html" aria-label="Creator interview from Cairo">🎙️ Cairo interview</a></div>
+      </li>
+<li class="card" data-name="calgary" data-letter="C">
+        <h3>Calgary</h3>
+        <div class="minis"><a class="mini" href="calgary-coworking-guide.html" aria-label="Coworking guide for Calgary">📖 Calgary coworking guide</a><a class="mini" href="calgary-podcast-proposal.html" aria-label="Creator interview from Calgary">🎙️ Calgary interview</a></div>
+      </li>
+<li class="card" data-name="cali" data-letter="C">
+        <h3>Cali</h3>
+        <div class="minis"><a class="mini" href="cali-podcast-proposal.html" aria-label="Creator interview from Cali">🎙️ Cali interview</a></div>
+      </li>
+<li class="card" data-name="cape town" data-letter="C">
+        <h3>Cape Town</h3>
+        <div class="minis"><a class="mini" href="cape-town-coworking-guide.html" aria-label="Coworking guide for Cape Town">📖 Cape Town coworking guide</a><a class="mini" href="cape-town-podcast-proposal.html" aria-label="Creator interview from Cape Town">🎙️ Cape Town interview</a></div>
+      </li>
+<li class="card" data-name="caracas" data-letter="C">
+        <h3>Caracas</h3>
+        <div class="minis"><a class="mini" href="caracas-coworking-guide.html" aria-label="Coworking guide for Caracas">📖 Caracas coworking guide</a><a class="mini" href="caracas-podcast-proposal.html" aria-label="Creator interview from Caracas">🎙️ Caracas interview</a></div>
+      </li>
+<li class="card" data-name="cardiff" data-letter="C">
+        <h3>Cardiff</h3>
+        <div class="minis"><a class="mini" href="cardiff-podcast-proposal.html" aria-label="Creator interview from Cardiff">🎙️ Cardiff interview</a></div>
+      </li>
+<li class="card" data-name="cartagena" data-letter="C">
+        <h3>Cartagena</h3>
+        <div class="minis"><a class="mini" href="cartagena-podcast-proposal.html" aria-label="Creator interview from Cartagena">🎙️ Cartagena interview</a></div>
+      </li>
+<li class="card" data-name="casablanca" data-letter="C">
+        <h3>Casablanca</h3>
+        <div class="minis"><a class="mini" href="casablanca-coworking-guide.html" aria-label="Coworking guide for Casablanca">📖 Casablanca coworking guide</a><a class="mini" href="casablanca-podcast-proposal.html" aria-label="Creator interview from Casablanca">🎙️ Casablanca interview</a></div>
+      </li>
+<li class="card" data-name="cebu" data-letter="C">
+        <h3>Cebu</h3>
+        <div class="minis"><a class="mini" href="cebu-podcast-proposal.html" aria-label="Creator interview from Cebu">🎙️ Cebu interview</a></div>
+      </li>
+<li class="card" data-name="chengdu" data-letter="C">
+        <h3>Chengdu</h3>
+        <div class="minis"><a class="mini" href="chengdu-podcast-proposal.html" aria-label="Creator interview from Chengdu">🎙️ Chengdu interview</a></div>
+      </li>
+<li class="card" data-name="chennai" data-letter="C">
+        <h3>Chennai</h3>
+        <div class="minis"><a class="mini" href="chennai-podcast-proposal.html" aria-label="Creator interview from Chennai">🎙️ Chennai interview</a></div>
+      </li>
+<li class="card" data-name="chiang mai" data-letter="C">
+        <h3>Chiang Mai</h3>
+        <div class="minis"><a class="mini" href="chiang-mai-podcast-proposal.html" aria-label="Creator interview from Chiang Mai">🎙️ Chiang Mai interview</a></div>
+      </li>
+<li class="card" data-name="chicago" data-letter="C">
+        <h3>Chicago</h3>
+        <div class="minis"><a class="mini" href="chicago-coworking-guide.html" aria-label="Coworking guide for Chicago">📖 Chicago coworking guide</a><a class="mini" href="chicago-podcast-proposal.html" aria-label="Creator interview from Chicago">🎙️ Chicago interview</a></div>
+      </li>
+<li class="card" data-name="chisinau" data-letter="C">
+        <h3>Chisinau</h3>
+        <div class="minis"><a class="mini" href="chisinau-coworking-guide.html" aria-label="Coworking guide for Chisinau">📖 Chisinau coworking guide</a><a class="mini" href="chisinau-podcast-proposal.html" aria-label="Creator interview from Chisinau">🎙️ Chisinau interview</a></div>
+      </li>
+<li class="card" data-name="christchurch" data-letter="C">
+        <h3>Christchurch</h3>
+        <div class="minis"><a class="mini" href="christchurch-coworking-guide.html" aria-label="Coworking guide for Christchurch">📖 Christchurch coworking guide</a><a class="mini" href="christchurch-podcast-proposal.html" aria-label="Creator interview from Christchurch">🎙️ Christchurch interview</a></div>
+      </li>
+<li class="card" data-name="ciudad juarez" data-letter="C">
+        <h3>Ciudad Juarez</h3>
+        <div class="minis"><a class="mini" href="ciudad-juarez-coworking-guide.html" aria-label="Coworking guide for Ciudad Juarez">📖 Ciudad Juarez coworking guide</a><a class="mini" href="ciudad-juarez-podcast-proposal.html" aria-label="Creator interview from Ciudad Juarez">🎙️ Ciudad Juarez interview</a></div>
+      </li>
+<li class="card" data-name="cluj napoca" data-letter="C">
+        <h3>Cluj Napoca</h3>
+        <div class="minis"><a class="mini" href="cluj-napoca-podcast-proposal.html" aria-label="Creator interview from Cluj Napoca">🎙️ Cluj Napoca interview</a></div>
+      </li>
+<li class="card" data-name="cologne" data-letter="C">
+        <h3>Cologne</h3>
+        <div class="minis"><a class="mini" href="cologne-coworking-guide.html" aria-label="Coworking guide for Cologne">📖 Cologne coworking guide</a><a class="mini" href="cologne-podcast-proposal.html" aria-label="Creator interview from Cologne">🎙️ Cologne interview</a></div>
+      </li>
+<li class="card" data-name="colombo" data-letter="C">
+        <h3>Colombo</h3>
+        <div class="minis"><a class="mini" href="colombo-coworking-guide.html" aria-label="Coworking guide for Colombo">📖 Colombo coworking guide</a><a class="mini" href="colombo-podcast-proposal.html" aria-label="Creator interview from Colombo">🎙️ Colombo interview</a></div>
+      </li>
+<li class="card" data-name="copenhagen" data-letter="C">
+        <h3>Copenhagen</h3>
+        <div class="minis"><a class="mini" href="copenhagen-coworking-guide.html" aria-label="Coworking guide for Copenhagen">📖 Copenhagen coworking guide</a><a class="mini" href="copenhagen-podcast-proposal.html" aria-label="Creator interview from Copenhagen">🎙️ Copenhagen interview</a></div>
+      </li>
+<li class="card" data-name="cordoba" data-letter="C">
+        <h3>Cordoba</h3>
+        <div class="minis"><a class="mini" href="cordoba-podcast-proposal.html" aria-label="Creator interview from Cordoba">🎙️ Cordoba interview</a></div>
+      </li>
+<li class="card" data-name="cuenca" data-letter="C">
+        <h3>Cuenca</h3>
+        <div class="minis"><a class="mini" href="cuenca-podcast-proposal.html" aria-label="Creator interview from Cuenca">🎙️ Cuenca interview</a></div>
+      </li>
+<li class="card" data-name="curitiba" data-letter="C">
+        <h3>Curitiba</h3>
+        <div class="minis"><a class="mini" href="curitiba-podcast-proposal.html" aria-label="Creator interview from Curitiba">🎙️ Curitiba interview</a></div>
+      </li>
+<li class="card" data-name="cusco" data-letter="C">
+        <h3>Cusco</h3>
+        <div class="minis"><a class="mini" href="cusco-podcast-proposal.html" aria-label="Creator interview from Cusco">🎙️ Cusco interview</a></div>
+      </li>
+<li class="card" data-name="da nang" data-letter="D">
+        <h3>Da Nang</h3>
+        <div class="minis"><a class="mini" href="da-nang-podcast-proposal.html" aria-label="Creator interview from Da Nang">🎙️ Da Nang interview</a></div>
+      </li>
+<li class="card" data-name="dakar" data-letter="D">
+        <h3>Dakar</h3>
+        <div class="minis"><a class="mini" href="dakar-coworking-guide.html" aria-label="Coworking guide for Dakar">📖 Dakar coworking guide</a><a class="mini" href="dakar-podcast-proposal.html" aria-label="Creator interview from Dakar">🎙️ Dakar interview</a></div>
+      </li>
+<li class="card" data-name="dallas" data-letter="D">
+        <h3>Dallas</h3>
+        <div class="minis"><a class="mini" href="dallas-coworking-guide.html" aria-label="Coworking guide for Dallas">📖 Dallas coworking guide</a><a class="mini" href="dallas-podcast-proposal.html" aria-label="Creator interview from Dallas">🎙️ Dallas interview</a></div>
+      </li>
+<li class="card" data-name="dammam" data-letter="D">
+        <h3>Dammam</h3>
+        <div class="minis"><a class="mini" href="dammam-coworking-guide.html" aria-label="Coworking guide for Dammam">📖 Dammam coworking guide</a><a class="mini" href="dammam-podcast-proposal.html" aria-label="Creator interview from Dammam">🎙️ Dammam interview</a></div>
+      </li>
+<li class="card" data-name="dar es salaam" data-letter="D">
+        <h3>Dar Es Salaam</h3>
+        <div class="minis"><a class="mini" href="dar-es-salaam-coworking-guide.html" aria-label="Coworking guide for Dar Es Salaam">📖 Dar Es Salaam coworking guide</a><a class="mini" href="dar-es-salaam-podcast-proposal.html" aria-label="Creator interview from Dar Es Salaam">🎙️ Dar Es Salaam interview</a></div>
+      </li>
+<li class="card" data-name="delhi" data-letter="D">
+        <h3>Delhi</h3>
+        <div class="minis"><a class="mini" href="delhi-podcast-proposal.html" aria-label="Creator interview from Delhi">🎙️ Delhi interview</a></div>
+      </li>
+<li class="card" data-name="denver" data-letter="D">
+        <h3>Denver</h3>
+        <div class="minis"><a class="mini" href="denver-coworking-guide.html" aria-label="Coworking guide for Denver">📖 Denver coworking guide</a><a class="mini" href="denver-podcast-proposal.html" aria-label="Creator interview from Denver">🎙️ Denver interview</a></div>
+      </li>
+<li class="card" data-name="detroit" data-letter="D">
+        <h3>Detroit</h3>
+        <div class="minis"><a class="mini" href="detroit-coworking-guide.html" aria-label="Coworking guide for Detroit">📖 Detroit coworking guide</a><a class="mini" href="detroit-podcast-proposal.html" aria-label="Creator interview from Detroit">🎙️ Detroit interview</a></div>
+      </li>
+<li class="card" data-name="dhaka" data-letter="D">
+        <h3>Dhaka</h3>
+        <div class="minis"><a class="mini" href="dhaka-coworking-guide.html" aria-label="Coworking guide for Dhaka">📖 Dhaka coworking guide</a><a class="mini" href="dhaka-podcast-proposal.html" aria-label="Creator interview from Dhaka">🎙️ Dhaka interview</a></div>
+      </li>
+<li class="card" data-name="doha" data-letter="D">
+        <h3>Doha</h3>
+        <div class="minis"><a class="mini" href="doha-coworking-guide.html" aria-label="Coworking guide for Doha">📖 Doha coworking guide</a><a class="mini" href="doha-podcast-proposal.html" aria-label="Creator interview from Doha">🎙️ Doha interview</a></div>
+      </li>
+<li class="card" data-name="dortmund" data-letter="D">
+        <h3>Dortmund</h3>
+        <div class="minis"><a class="mini" href="dortmund-coworking-guide.html" aria-label="Coworking guide for Dortmund">📖 Dortmund coworking guide</a><a class="mini" href="dortmund-podcast-proposal.html" aria-label="Creator interview from Dortmund">🎙️ Dortmund interview</a></div>
+      </li>
+<li class="card" data-name="dresden" data-letter="D">
+        <h3>Dresden</h3>
+        <div class="minis"><a class="mini" href="dresden-coworking-guide.html" aria-label="Coworking guide for Dresden">📖 Dresden coworking guide</a><a class="mini" href="dresden-podcast-proposal.html" aria-label="Creator interview from Dresden">🎙️ Dresden interview</a></div>
+      </li>
+<li class="card" data-name="dubai" data-letter="D">
+        <h3>Dubai</h3>
+        <div class="minis"><a class="mini" href="dubai-coworking-guide.html" aria-label="Coworking guide for Dubai">📖 Dubai coworking guide</a><a class="mini" href="dubai-podcast-proposal.html" aria-label="Creator interview from Dubai">🎙️ Dubai interview</a></div>
+      </li>
+<li class="card" data-name="dublin" data-letter="D">
+        <h3>Dublin</h3>
+        <div class="minis"><a class="mini" href="dublin-coworking-guide.html" aria-label="Coworking guide for Dublin">📖 Dublin coworking guide</a><a class="mini" href="dublin-podcast-proposal.html" aria-label="Creator interview from Dublin">🎙️ Dublin interview</a></div>
+      </li>
+<li class="card" data-name="dubrovnik" data-letter="D">
+        <h3>Dubrovnik</h3>
+        <div class="minis"><a class="mini" href="dubrovnik-podcast-proposal.html" aria-label="Creator interview from Dubrovnik">🎙️ Dubrovnik interview</a></div>
+      </li>
+<li class="card" data-name="duisburg" data-letter="D">
+        <h3>Duisburg</h3>
+        <div class="minis"><a class="mini" href="duisburg-coworking-guide.html" aria-label="Coworking guide for Duisburg">📖 Duisburg coworking guide</a><a class="mini" href="duisburg-podcast-proposal.html" aria-label="Creator interview from Duisburg">🎙️ Duisburg interview</a></div>
+      </li>
+<li class="card" data-name="durban" data-letter="D">
+        <h3>Durban</h3>
+        <div class="minis"><a class="mini" href="durban-podcast-proposal.html" aria-label="Creator interview from Durban">🎙️ Durban interview</a></div>
+      </li>
+<li class="card" data-name="dushanbe" data-letter="D">
+        <h3>Dushanbe</h3>
+        <div class="minis"><a class="mini" href="dushanbe-coworking-guide.html" aria-label="Coworking guide for Dushanbe">📖 Dushanbe coworking guide</a><a class="mini" href="dushanbe-podcast-proposal.html" aria-label="Creator interview from Dushanbe">🎙️ Dushanbe interview</a></div>
+      </li>
+<li class="card" data-name="dusseldorf" data-letter="D">
+        <h3>Dusseldorf</h3>
+        <div class="minis"><a class="mini" href="dusseldorf-coworking-guide.html" aria-label="Coworking guide for Dusseldorf">📖 Dusseldorf coworking guide</a><a class="mini" href="dusseldorf-podcast-proposal.html" aria-label="Creator interview from Dusseldorf">🎙️ Dusseldorf interview</a></div>
+      </li>
+<li class="card" data-name="edinburgh" data-letter="E">
+        <h3>Edinburgh</h3>
+        <div class="minis"><a class="mini" href="edinburgh-coworking-guide.html" aria-label="Coworking guide for Edinburgh">📖 Edinburgh coworking guide</a><a class="mini" href="edinburgh-podcast-proposal.html" aria-label="Creator interview from Edinburgh">🎙️ Edinburgh interview</a></div>
+      </li>
+<li class="card" data-name="edmonton" data-letter="E">
+        <h3>Edmonton</h3>
+        <div class="minis"><a class="mini" href="edmonton-coworking-guide.html" aria-label="Coworking guide for Edmonton">📖 Edmonton coworking guide</a><a class="mini" href="edmonton-podcast-proposal.html" aria-label="Creator interview from Edmonton">🎙️ Edmonton interview</a></div>
+      </li>
+<li class="card" data-name="erbil" data-letter="E">
+        <h3>Erbil</h3>
+        <div class="minis"><a class="mini" href="erbil-podcast-proposal.html" aria-label="Creator interview from Erbil">🎙️ Erbil interview</a></div>
+      </li>
+<li class="card" data-name="essen" data-letter="E">
+        <h3>Essen</h3>
+        <div class="minis"><a class="mini" href="essen-coworking-guide.html" aria-label="Coworking guide for Essen">📖 Essen coworking guide</a><a class="mini" href="essen-podcast-proposal.html" aria-label="Creator interview from Essen">🎙️ Essen interview</a></div>
+      </li>
+<li class="card" data-name="faro" data-letter="F">
+        <h3>Faro</h3>
+        <div class="minis"><a class="mini" href="faro-podcast-proposal.html" aria-label="Creator interview from Faro">🎙️ Faro interview</a></div>
+      </li>
+<li class="card" data-name="florence" data-letter="F">
+        <h3>Florence</h3>
+        <div class="minis"><a class="mini" href="florence-podcast-proposal.html" aria-label="Creator interview from Florence">🎙️ Florence interview</a></div>
+      </li>
+<li class="card" data-name="florianopolis" data-letter="F">
+        <h3>Florianopolis</h3>
+        <div class="minis"><a class="mini" href="florianopolis-podcast-proposal.html" aria-label="Creator interview from Florianopolis">🎙️ Florianopolis interview</a></div>
+      </li>
+<li class="card" data-name="frankfurt" data-letter="F">
+        <h3>Frankfurt</h3>
+        <div class="minis"><a class="mini" href="frankfurt-coworking-guide.html" aria-label="Coworking guide for Frankfurt">📖 Frankfurt coworking guide</a><a class="mini" href="frankfurt-podcast-proposal.html" aria-label="Creator interview from Frankfurt">🎙️ Frankfurt interview</a></div>
+      </li>
+<li class="card" data-name="fresno" data-letter="F">
+        <h3>Fresno</h3>
+        <div class="minis"><a class="mini" href="fresno-coworking-guide.html" aria-label="Coworking guide for Fresno">📖 Fresno coworking guide</a><a class="mini" href="fresno-podcast-proposal.html" aria-label="Creator interview from Fresno">🎙️ Fresno interview</a></div>
+      </li>
+<li class="card" data-name="fukuoka" data-letter="F">
+        <h3>Fukuoka</h3>
+        <div class="minis"><a class="mini" href="fukuoka-podcast-proposal.html" aria-label="Creator interview from Fukuoka">🎙️ Fukuoka interview</a></div>
+      </li>
+<li class="card" data-name="funchal" data-letter="F">
+        <h3>Funchal</h3>
+        <div class="minis"><a class="mini" href="funchal-podcast-proposal.html" aria-label="Creator interview from Funchal">🎙️ Funchal interview</a></div>
+      </li>
+<li class="card" data-name="gdansk" data-letter="G">
+        <h3>Gdansk</h3>
+        <div class="minis"><a class="mini" href="gdansk-podcast-proposal.html" aria-label="Creator interview from Gdansk">🎙️ Gdansk interview</a></div>
+      </li>
+<li class="card" data-name="geneva" data-letter="G">
+        <h3>Geneva</h3>
+        <div class="minis"><a class="mini" href="geneva-coworking-guide.html" aria-label="Coworking guide for Geneva">📖 Geneva coworking guide</a><a class="mini" href="geneva-podcast-proposal.html" aria-label="Creator interview from Geneva">🎙️ Geneva interview</a></div>
+      </li>
+<li class="card" data-name="glasgow" data-letter="G">
+        <h3>Glasgow</h3>
+        <div class="minis"><a class="mini" href="glasgow-coworking-guide.html" aria-label="Coworking guide for Glasgow">📖 Glasgow coworking guide</a><a class="mini" href="glasgow-podcast-proposal.html" aria-label="Creator interview from Glasgow">🎙️ Glasgow interview</a></div>
+      </li>
+<li class="card" data-name="goa" data-letter="G">
+        <h3>Goa</h3>
+        <div class="minis"><a class="mini" href="goa-podcast-proposal.html" aria-label="Creator interview from Goa">🎙️ Goa interview</a></div>
+      </li>
+<li class="card" data-name="guadalajara" data-letter="G">
+        <h3>Guadalajara</h3>
+        <div class="minis"><a class="mini" href="guadalajara-coworking-guide.html" aria-label="Coworking guide for Guadalajara">📖 Guadalajara coworking guide</a><a class="mini" href="guadalajara-podcast-proposal.html" aria-label="Creator interview from Guadalajara">🎙️ Guadalajara interview</a></div>
+      </li>
+<li class="card" data-name="guangzhou" data-letter="G">
+        <h3>Guangzhou</h3>
+        <div class="minis"><a class="mini" href="guangzhou-coworking-guide.html" aria-label="Coworking guide for Guangzhou">📖 Guangzhou coworking guide</a><a class="mini" href="guangzhou-podcast-proposal.html" aria-label="Creator interview from Guangzhou">🎙️ Guangzhou interview</a></div>
+      </li>
+<li class="card" data-name="guayaquil" data-letter="G">
+        <h3>Guayaquil</h3>
+        <div class="minis"><a class="mini" href="guayaquil-coworking-guide.html" aria-label="Coworking guide for Guayaquil">📖 Guayaquil coworking guide</a><a class="mini" href="guayaquil-podcast-proposal.html" aria-label="Creator interview from Guayaquil">🎙️ Guayaquil interview</a></div>
+      </li>
+<li class="card" data-name="halifax" data-letter="H">
+        <h3>Halifax</h3>
+        <div class="minis"><a class="mini" href="halifax-coworking-guide.html" aria-label="Coworking guide for Halifax">📖 Halifax coworking guide</a><a class="mini" href="halifax-podcast-proposal.html" aria-label="Creator interview from Halifax">🎙️ Halifax interview</a></div>
+      </li>
+<li class="card" data-name="hamburg" data-letter="H">
+        <h3>Hamburg</h3>
+        <div class="minis"><a class="mini" href="hamburg-coworking-guide.html" aria-label="Coworking guide for Hamburg">📖 Hamburg coworking guide</a><a class="mini" href="hamburg-podcast-proposal.html" aria-label="Creator interview from Hamburg">🎙️ Hamburg interview</a></div>
+      </li>
+<li class="card" data-name="hamilton" data-letter="H">
+        <h3>Hamilton</h3>
+        <div class="minis"><a class="mini" href="hamilton-coworking-guide.html" aria-label="Coworking guide for Hamilton">📖 Hamilton coworking guide</a><a class="mini" href="hamilton-podcast-proposal.html" aria-label="Creator interview from Hamilton">🎙️ Hamilton interview</a></div>
+      </li>
+<li class="card" data-name="hanoi" data-letter="H">
+        <h3>Hanoi</h3>
+        <div class="minis"><a class="mini" href="hanoi-podcast-proposal.html" aria-label="Creator interview from Hanoi">🎙️ Hanoi interview</a></div>
+      </li>
+<li class="card" data-name="hanover" data-letter="H">
+        <h3>Hanover</h3>
+        <div class="minis"><a class="mini" href="hanover-coworking-guide.html" aria-label="Coworking guide for Hanover">📖 Hanover coworking guide</a><a class="mini" href="hanover-podcast-proposal.html" aria-label="Creator interview from Hanover">🎙️ Hanover interview</a></div>
+      </li>
+<li class="card" data-name="helsinki" data-letter="H">
+        <h3>Helsinki</h3>
+        <div class="minis"><a class="mini" href="helsinki-coworking-guide.html" aria-label="Coworking guide for Helsinki">📖 Helsinki coworking guide</a><a class="mini" href="helsinki-podcast-proposal.html" aria-label="Creator interview from Helsinki">🎙️ Helsinki interview</a></div>
+      </li>
+<li class="card" data-name="ho chi minh" data-letter="H">
+        <h3>Ho Chi Minh</h3>
+        <div class="minis"><a class="mini" href="ho-chi-minh-coworking-guide.html" aria-label="Coworking guide for Ho Chi Minh">📖 Ho Chi Minh coworking guide</a><a class="mini" href="ho-chi-minh-podcast-proposal.html" aria-label="Creator interview from Ho Chi Minh">🎙️ Ho Chi Minh interview</a></div>
+      </li>
+<li class="card" data-name="hong kong" data-letter="H">
+        <h3>Hong Kong</h3>
+        <div class="minis"><a class="mini" href="hong-kong-coworking-guide.html" aria-label="Coworking guide for Hong Kong">📖 Hong Kong coworking guide</a><a class="mini" href="hong-kong-podcast-proposal.html" aria-label="Creator interview from Hong Kong">🎙️ Hong Kong interview</a></div>
+      </li>
+<li class="card" data-name="honolulu" data-letter="H">
+        <h3>Honolulu</h3>
+        <div class="minis"><a class="mini" href="honolulu-podcast-proposal.html" aria-label="Creator interview from Honolulu">🎙️ Honolulu interview</a></div>
+      </li>
+<li class="card" data-name="houston" data-letter="H">
+        <h3>Houston</h3>
+        <div class="minis"><a class="mini" href="houston-coworking-guide.html" aria-label="Coworking guide for Houston">📖 Houston coworking guide</a><a class="mini" href="houston-podcast-proposal.html" aria-label="Creator interview from Houston">🎙️ Houston interview</a></div>
+      </li>
+<li class="card" data-name="hyderabad" data-letter="H">
+        <h3>Hyderabad</h3>
+        <div class="minis"><a class="mini" href="hyderabad-coworking-guide.html" aria-label="Coworking guide for Hyderabad">📖 Hyderabad coworking guide</a><a class="mini" href="hyderabad-podcast-proposal.html" aria-label="Creator interview from Hyderabad">🎙️ Hyderabad interview</a></div>
+      </li>
+<li class="card" data-name="islamabad" data-letter="I">
+        <h3>Islamabad</h3>
+        <div class="minis"><a class="mini" href="islamabad-podcast-proposal.html" aria-label="Creator interview from Islamabad">🎙️ Islamabad interview</a></div>
+      </li>
+<li class="card" data-name="istanbul" data-letter="I">
+        <h3>Istanbul</h3>
+        <div class="minis"><a class="mini" href="istanbul-coworking-guide.html" aria-label="Coworking guide for Istanbul">📖 Istanbul coworking guide</a><a class="mini" href="istanbul-podcast-proposal.html" aria-label="Creator interview from Istanbul">🎙️ Istanbul interview</a></div>
+      </li>
+<li class="card" data-name="izmir" data-letter="I">
+        <h3>Izmir</h3>
+        <div class="minis"><a class="mini" href="izmir-podcast-proposal.html" aria-label="Creator interview from Izmir">🎙️ Izmir interview</a></div>
+      </li>
+<li class="card" data-name="jaipur" data-letter="J">
+        <h3>Jaipur</h3>
+        <div class="minis"><a class="mini" href="jaipur-podcast-proposal.html" aria-label="Creator interview from Jaipur">🎙️ Jaipur interview</a></div>
+      </li>
+<li class="card" data-name="jakarta" data-letter="J">
+        <h3>Jakarta</h3>
+        <div class="minis"><a class="mini" href="jakarta-coworking-guide.html" aria-label="Coworking guide for Jakarta">📖 Jakarta coworking guide</a><a class="mini" href="jakarta-podcast-proposal.html" aria-label="Creator interview from Jakarta">🎙️ Jakarta interview</a></div>
+      </li>
+<li class="card" data-name="jeddah" data-letter="J">
+        <h3>Jeddah</h3>
+        <div class="minis"><a class="mini" href="jeddah-coworking-guide.html" aria-label="Coworking guide for Jeddah">📖 Jeddah coworking guide</a><a class="mini" href="jeddah-podcast-proposal.html" aria-label="Creator interview from Jeddah">🎙️ Jeddah interview</a></div>
+      </li>
+<li class="card" data-name="jeju" data-letter="J">
+        <h3>Jeju</h3>
+        <div class="minis"><a class="mini" href="jeju-podcast-proposal.html" aria-label="Creator interview from Jeju">🎙️ Jeju interview</a></div>
+      </li>
+<li class="card" data-name="johannesburg" data-letter="J">
+        <h3>Johannesburg</h3>
+        <div class="minis"><a class="mini" href="johannesburg-coworking-guide.html" aria-label="Coworking guide for Johannesburg">📖 Johannesburg coworking guide</a><a class="mini" href="johannesburg-podcast-proposal.html" aria-label="Creator interview from Johannesburg">🎙️ Johannesburg interview</a></div>
+      </li>
+<li class="card" data-name="kampala" data-letter="K">
+        <h3>Kampala</h3>
+        <div class="minis"><a class="mini" href="kampala-coworking-guide.html" aria-label="Coworking guide for Kampala">📖 Kampala coworking guide</a><a class="mini" href="kampala-podcast-proposal.html" aria-label="Creator interview from Kampala">🎙️ Kampala interview</a></div>
+      </li>
+<li class="card" data-name="kandy" data-letter="K">
+        <h3>Kandy</h3>
+        <div class="minis"><a class="mini" href="kandy-podcast-proposal.html" aria-label="Creator interview from Kandy">🎙️ Kandy interview</a></div>
+      </li>
+<li class="card" data-name="kaohsiung" data-letter="K">
+        <h3>Kaohsiung</h3>
+        <div class="minis"><a class="mini" href="kaohsiung-podcast-proposal.html" aria-label="Creator interview from Kaohsiung">🎙️ Kaohsiung interview</a></div>
+      </li>
+<li class="card" data-name="karachi" data-letter="K">
+        <h3>Karachi</h3>
+        <div class="minis"><a class="mini" href="karachi-podcast-proposal.html" aria-label="Creator interview from Karachi">🎙️ Karachi interview</a></div>
+      </li>
+<li class="card" data-name="kathmandu" data-letter="K">
+        <h3>Kathmandu</h3>
+        <div class="minis"><a class="mini" href="kathmandu-coworking-guide.html" aria-label="Coworking guide for Kathmandu">📖 Kathmandu coworking guide</a><a class="mini" href="kathmandu-podcast-proposal.html" aria-label="Creator interview from Kathmandu">🎙️ Kathmandu interview</a></div>
+      </li>
+<li class="card" data-name="kaunas" data-letter="K">
+        <h3>Kaunas</h3>
+        <div class="minis"><a class="mini" href="kaunas-podcast-proposal.html" aria-label="Creator interview from Kaunas">🎙️ Kaunas interview</a></div>
+      </li>
+<li class="card" data-name="khujand" data-letter="K">
+        <h3>Khujand</h3>
+        <div class="minis"><a class="mini" href="khujand-podcast-proposal.html" aria-label="Creator interview from Khujand">🎙️ Khujand interview</a></div>
+      </li>
+<li class="card" data-name="kigali" data-letter="K">
+        <h3>Kigali</h3>
+        <div class="minis"><a class="mini" href="kigali-coworking-guide.html" aria-label="Coworking guide for Kigali">📖 Kigali coworking guide</a><a class="mini" href="kigali-podcast-proposal.html" aria-label="Creator interview from Kigali">🎙️ Kigali interview</a></div>
+      </li>
+<li class="card" data-name="kingston" data-letter="K">
+        <h3>Kingston</h3>
+        <div class="minis"><a class="mini" href="kingston-coworking-guide.html" aria-label="Coworking guide for Kingston">📖 Kingston coworking guide</a><a class="mini" href="kingston-podcast-proposal.html" aria-label="Creator interview from Kingston">🎙️ Kingston interview</a></div>
+      </li>
+<li class="card" data-name="kolkata" data-letter="K">
+        <h3>Kolkata</h3>
+        <div class="minis"><a class="mini" href="kolkata-coworking-guide.html" aria-label="Coworking guide for Kolkata">📖 Kolkata coworking guide</a><a class="mini" href="kolkata-podcast-proposal.html" aria-label="Creator interview from Kolkata">🎙️ Kolkata interview</a></div>
+      </li>
+<li class="card" data-name="krakow" data-letter="K">
+        <h3>Krakow</h3>
+        <div class="minis"><a class="mini" href="krakow-podcast-proposal.html" aria-label="Creator interview from Krakow">🎙️ Krakow interview</a></div>
+      </li>
+<li class="card" data-name="kuala lumpur" data-letter="K">
+        <h3>Kuala Lumpur</h3>
+        <div class="minis"><a class="mini" href="kuala-lumpur-coworking-guide.html" aria-label="Coworking guide for Kuala Lumpur">📖 Kuala Lumpur coworking guide</a><a class="mini" href="kuala-lumpur-podcast-proposal.html" aria-label="Creator interview from Kuala Lumpur">🎙️ Kuala Lumpur interview</a></div>
+      </li>
+<li class="card" data-name="kuwait city" data-letter="K">
+        <h3>Kuwait City</h3>
+        <div class="minis"><a class="mini" href="kuwait-city-podcast-proposal.html" aria-label="Creator interview from Kuwait City">🎙️ Kuwait City interview</a></div>
+      </li>
+<li class="card" data-name="kyiv" data-letter="K">
+        <h3>Kyiv</h3>
+        <div class="minis"><a class="mini" href="kyiv-coworking-guide.html" aria-label="Coworking guide for Kyiv">📖 Kyiv coworking guide</a><a class="mini" href="kyiv-podcast-proposal.html" aria-label="Creator interview from Kyiv">🎙️ Kyiv interview</a></div>
+      </li>
+<li class="card" data-name="kyoto" data-letter="K">
+        <h3>Kyoto</h3>
+        <div class="minis"><a class="mini" href="kyoto-podcast-proposal.html" aria-label="Creator interview from Kyoto">🎙️ Kyoto interview</a></div>
+      </li>
+<li class="card" data-name="la paz" data-letter="L">
+        <h3>La Paz</h3>
+        <div class="minis"><a class="mini" href="la-paz-coworking-guide.html" aria-label="Coworking guide for La Paz">📖 La Paz coworking guide</a><a class="mini" href="la-paz-podcast-proposal.html" aria-label="Creator interview from La Paz">🎙️ La Paz interview</a></div>
+      </li>
+<li class="card" data-name="lagos" data-letter="L">
+        <h3>Lagos</h3>
+        <div class="minis"><a class="mini" href="lagos-coworking-guide.html" aria-label="Coworking guide for Lagos">📖 Lagos coworking guide</a><a class="mini" href="lagos-podcast-proposal.html" aria-label="Creator interview from Lagos">🎙️ Lagos interview</a></div>
+      </li>
+<li class="card" data-name="lahore" data-letter="L">
+        <h3>Lahore</h3>
+        <div class="minis"><a class="mini" href="lahore-podcast-proposal.html" aria-label="Creator interview from Lahore">🎙️ Lahore interview</a></div>
+      </li>
+<li class="card" data-name="las vegas" data-letter="L">
+        <h3>Las Vegas</h3>
+        <div class="minis"><a class="mini" href="las-vegas-coworking-guide.html" aria-label="Coworking guide for Las Vegas">📖 Las Vegas coworking guide</a><a class="mini" href="las-vegas-podcast-proposal.html" aria-label="Creator interview from Las Vegas">🎙️ Las Vegas interview</a></div>
+      </li>
+<li class="card" data-name="laval" data-letter="L">
+        <h3>Laval</h3>
+        <div class="minis"><a class="mini" href="laval-coworking-guide.html" aria-label="Coworking guide for Laval">📖 Laval coworking guide</a><a class="mini" href="laval-podcast-proposal.html" aria-label="Creator interview from Laval">🎙️ Laval interview</a></div>
+      </li>
+<li class="card" data-name="leeds" data-letter="L">
+        <h3>Leeds</h3>
+        <div class="minis"><a class="mini" href="leeds-coworking-guide.html" aria-label="Coworking guide for Leeds">📖 Leeds coworking guide</a><a class="mini" href="leeds-podcast-proposal.html" aria-label="Creator interview from Leeds">🎙️ Leeds interview</a></div>
+      </li>
+<li class="card" data-name="leipzig" data-letter="L">
+        <h3>Leipzig</h3>
+        <div class="minis"><a class="mini" href="leipzig-coworking-guide.html" aria-label="Coworking guide for Leipzig">📖 Leipzig coworking guide</a><a class="mini" href="leipzig-podcast-proposal.html" aria-label="Creator interview from Leipzig">🎙️ Leipzig interview</a></div>
+      </li>
+<li class="card" data-name="leon" data-letter="L">
+        <h3>Leon</h3>
+        <div class="minis"><a class="mini" href="leon-coworking-guide.html" aria-label="Coworking guide for Leon">📖 Leon coworking guide</a><a class="mini" href="leon-podcast-proposal.html" aria-label="Creator interview from Leon">🎙️ Leon interview</a></div>
+      </li>
+<li class="card" data-name="lima" data-letter="L">
+        <h3>Lima</h3>
+        <div class="minis"><a class="mini" href="lima-coworking-guide.html" aria-label="Coworking guide for Lima">📖 Lima coworking guide</a><a class="mini" href="lima-podcast-proposal.html" aria-label="Creator interview from Lima">🎙️ Lima interview</a></div>
+      </li>
+<li class="card" data-name="lisbon" data-letter="L">
+        <h3>Lisbon</h3>
+        <div class="minis"><a class="mini" href="lisbon-coworking-guide.html" aria-label="Coworking guide for Lisbon">📖 Lisbon coworking guide</a><a class="mini" href="lisbon-podcast-proposal.html" aria-label="Creator interview from Lisbon">🎙️ Lisbon interview</a></div>
+      </li>
+<li class="card" data-name="liverpool" data-letter="L">
+        <h3>Liverpool</h3>
+        <div class="minis"><a class="mini" href="liverpool-coworking-guide.html" aria-label="Coworking guide for Liverpool">📖 Liverpool coworking guide</a><a class="mini" href="liverpool-podcast-proposal.html" aria-label="Creator interview from Liverpool">🎙️ Liverpool interview</a></div>
+      </li>
+<li class="card" data-name="ljubljana" data-letter="L">
+        <h3>Ljubljana</h3>
+        <div class="minis"><a class="mini" href="ljubljana-coworking-guide.html" aria-label="Coworking guide for Ljubljana">📖 Ljubljana coworking guide</a><a class="mini" href="ljubljana-podcast-proposal.html" aria-label="Creator interview from Ljubljana">🎙️ Ljubljana interview</a></div>
+      </li>
+<li class="card" data-name="london" data-letter="L">
+        <h3>London</h3>
+        <div class="minis"><a class="mini" href="london-coworking-guide.html" aria-label="Coworking guide for London">📖 London coworking guide</a><a class="mini" href="london-podcast-proposal.html" aria-label="Creator interview from London">🎙️ London interview</a></div>
+      </li>
+<li class="card" data-name="london ontario" data-letter="L">
+        <h3>London Ontario</h3>
+        <div class="minis"><a class="mini" href="london-ontario-coworking-guide.html" aria-label="Coworking guide for London Ontario">📖 London Ontario coworking guide</a><a class="mini" href="london-ontario-podcast-proposal.html" aria-label="Creator interview from London Ontario">🎙️ London Ontario interview</a></div>
+      </li>
+<li class="card" data-name="los angeles" data-letter="L">
+        <h3>Los Angeles</h3>
+        <div class="minis"><a class="mini" href="los-angeles-coworking-guide.html" aria-label="Coworking guide for Los Angeles">📖 Los Angeles coworking guide</a><a class="mini" href="los-angeles-podcast-proposal.html" aria-label="Creator interview from Los Angeles">🎙️ Los Angeles interview</a></div>
+      </li>
+<li class="card" data-name="louisville" data-letter="L">
+        <h3>Louisville</h3>
+        <div class="minis"><a class="mini" href="louisville-coworking-guide.html" aria-label="Coworking guide for Louisville">📖 Louisville coworking guide</a><a class="mini" href="louisville-podcast-proposal.html" aria-label="Creator interview from Louisville">🎙️ Louisville interview</a></div>
+      </li>
+<li class="card" data-name="luanda" data-letter="L">
+        <h3>Luanda</h3>
+        <div class="minis"><a class="mini" href="luanda-podcast-proposal.html" aria-label="Creator interview from Luanda">🎙️ Luanda interview</a></div>
+      </li>
+<li class="card" data-name="luxembourg" data-letter="L">
+        <h3>Luxembourg</h3>
+        <div class="minis"><a class="mini" href="luxembourg-coworking-guide.html" aria-label="Coworking guide for Luxembourg">📖 Luxembourg coworking guide</a><a class="mini" href="luxembourg-podcast-proposal.html" aria-label="Creator interview from Luxembourg">🎙️ Luxembourg interview</a></div>
+      </li>
+<li class="card" data-name="lviv" data-letter="L">
+        <h3>Lviv</h3>
+        <div class="minis"><a class="mini" href="lviv-coworking-guide.html" aria-label="Coworking guide for Lviv">📖 Lviv coworking guide</a><a class="mini" href="lviv-podcast-proposal.html" aria-label="Creator interview from Lviv">🎙️ Lviv interview</a></div>
+      </li>
+<li class="card" data-name="lyon" data-letter="L">
+        <h3>Lyon</h3>
+        <div class="minis"><a class="mini" href="lyon-podcast-proposal.html" aria-label="Creator interview from Lyon">🎙️ Lyon interview</a></div>
+      </li>
+<li class="card" data-name="macau" data-letter="M">
+        <h3>Macau</h3>
+        <div class="minis"><a class="mini" href="macau-podcast-proposal.html" aria-label="Creator interview from Macau">🎙️ Macau interview</a></div>
+      </li>
+<li class="card" data-name="madrid" data-letter="M">
+        <h3>Madrid</h3>
+        <div class="minis"><a class="mini" href="madrid-coworking-guide.html" aria-label="Coworking guide for Madrid">📖 Madrid coworking guide</a><a class="mini" href="madrid-podcast-proposal.html" aria-label="Creator interview from Madrid">🎙️ Madrid interview</a></div>
+      </li>
+<li class="card" data-name="male" data-letter="M">
+        <h3>Male</h3>
+        <div class="minis"><a class="mini" href="male-coworking-guide.html" aria-label="Coworking guide for Male">📖 Male coworking guide</a><a class="mini" href="male-podcast-proposal.html" aria-label="Creator interview from Male">🎙️ Male interview</a></div>
+      </li>
+<li class="card" data-name="manama" data-letter="M">
+        <h3>Manama</h3>
+        <div class="minis"><a class="mini" href="manama-coworking-guide.html" aria-label="Coworking guide for Manama">📖 Manama coworking guide</a><a class="mini" href="manama-podcast-proposal.html" aria-label="Creator interview from Manama">🎙️ Manama interview</a></div>
+      </li>
+<li class="card" data-name="manchester" data-letter="M">
+        <h3>Manchester</h3>
+        <div class="minis"><a class="mini" href="manchester-coworking-guide.html" aria-label="Coworking guide for Manchester">📖 Manchester coworking guide</a><a class="mini" href="manchester-podcast-proposal.html" aria-label="Creator interview from Manchester">🎙️ Manchester interview</a></div>
+      </li>
+<li class="card" data-name="manila" data-letter="M">
+        <h3>Manila</h3>
+        <div class="minis"><a class="mini" href="manila-coworking-guide.html" aria-label="Coworking guide for Manila">📖 Manila coworking guide</a><a class="mini" href="manila-podcast-proposal.html" aria-label="Creator interview from Manila">🎙️ Manila interview</a></div>
+      </li>
+<li class="card" data-name="maputo" data-letter="M">
+        <h3>Maputo</h3>
+        <div class="minis"><a class="mini" href="maputo-podcast-proposal.html" aria-label="Creator interview from Maputo">🎙️ Maputo interview</a></div>
+      </li>
+<li class="card" data-name="marrakech" data-letter="M">
+        <h3>Marrakech</h3>
+        <div class="minis"><a class="mini" href="marrakech-podcast-proposal.html" aria-label="Creator interview from Marrakech">🎙️ Marrakech interview</a></div>
+      </li>
+<li class="card" data-name="mauritius" data-letter="M">
+        <h3>Mauritius</h3>
+        <div class="minis"><a class="mini" href="mauritius-podcast-proposal.html" aria-label="Creator interview from Mauritius">🎙️ Mauritius interview</a></div>
+      </li>
+<li class="card" data-name="medellin" data-letter="M">
+        <h3>Medellin</h3>
+        <div class="minis"><a class="mini" href="medellin-coworking-guide.html" aria-label="Coworking guide for Medellin">📖 Medellin coworking guide</a><a class="mini" href="medellin-podcast-proposal.html" aria-label="Creator interview from Medellin">🎙️ Medellin interview</a></div>
+      </li>
+<li class="card" data-name="melbourne" data-letter="M">
+        <h3>Melbourne</h3>
+        <div class="minis"><a class="mini" href="melbourne-coworking-guide.html" aria-label="Coworking guide for Melbourne">📖 Melbourne coworking guide</a><a class="mini" href="melbourne-podcast-proposal.html" aria-label="Creator interview from Melbourne">🎙️ Melbourne interview</a></div>
+      </li>
+<li class="card" data-name="memphis" data-letter="M">
+        <h3>Memphis</h3>
+        <div class="minis"><a class="mini" href="memphis-coworking-guide.html" aria-label="Coworking guide for Memphis">📖 Memphis coworking guide</a><a class="mini" href="memphis-podcast-proposal.html" aria-label="Creator interview from Memphis">🎙️ Memphis interview</a></div>
+      </li>
+<li class="card" data-name="mendoza" data-letter="M">
+        <h3>Mendoza</h3>
+        <div class="minis"><a class="mini" href="mendoza-podcast-proposal.html" aria-label="Creator interview from Mendoza">🎙️ Mendoza interview</a></div>
+      </li>
+<li class="card" data-name="mexico city" data-letter="M">
+        <h3>Mexico City</h3>
+        <div class="minis"><a class="mini" href="mexico-city-coworking-guide.html" aria-label="Coworking guide for Mexico City">📖 Mexico City coworking guide</a><a class="mini" href="mexico-city-podcast-proposal.html" aria-label="Creator interview from Mexico City">🎙️ Mexico City interview</a></div>
+      </li>
+<li class="card" data-name="miami" data-letter="M">
+        <h3>Miami</h3>
+        <div class="minis"><a class="mini" href="miami-coworking-guide.html" aria-label="Coworking guide for Miami">📖 Miami coworking guide</a><a class="mini" href="miami-podcast-proposal.html" aria-label="Creator interview from Miami">🎙️ Miami interview</a></div>
+      </li>
+<li class="card" data-name="milan" data-letter="M">
+        <h3>Milan</h3>
+        <div class="minis"><a class="mini" href="milan-coworking-guide.html" aria-label="Coworking guide for Milan">📖 Milan coworking guide</a><a class="mini" href="milan-podcast-proposal.html" aria-label="Creator interview from Milan">🎙️ Milan interview</a></div>
+      </li>
+<li class="card" data-name="minneapolis" data-letter="M">
+        <h3>Minneapolis</h3>
+        <div class="minis"><a class="mini" href="minneapolis-coworking-guide.html" aria-label="Coworking guide for Minneapolis">📖 Minneapolis coworking guide</a><a class="mini" href="minneapolis-podcast-proposal.html" aria-label="Creator interview from Minneapolis">🎙️ Minneapolis interview</a></div>
+      </li>
+<li class="card" data-name="minsk" data-letter="M">
+        <h3>Minsk</h3>
+        <div class="minis"><a class="mini" href="minsk-coworking-guide.html" aria-label="Coworking guide for Minsk">📖 Minsk coworking guide</a><a class="mini" href="minsk-podcast-proposal.html" aria-label="Creator interview from Minsk">🎙️ Minsk interview</a></div>
+      </li>
+<li class="card" data-name="mississauga" data-letter="M">
+        <h3>Mississauga</h3>
+        <div class="minis"><a class="mini" href="mississauga-coworking-guide.html" aria-label="Coworking guide for Mississauga">📖 Mississauga coworking guide</a><a class="mini" href="mississauga-podcast-proposal.html" aria-label="Creator interview from Mississauga">🎙️ Mississauga interview</a></div>
+      </li>
+<li class="card" data-name="mombasa" data-letter="M">
+        <h3>Mombasa</h3>
+        <div class="minis"><a class="mini" href="mombasa-podcast-proposal.html" aria-label="Creator interview from Mombasa">🎙️ Mombasa interview</a></div>
+      </li>
+<li class="card" data-name="monterrey" data-letter="M">
+        <h3>Monterrey</h3>
+        <div class="minis"><a class="mini" href="monterrey-coworking-guide.html" aria-label="Coworking guide for Monterrey">📖 Monterrey coworking guide</a><a class="mini" href="monterrey-podcast-proposal.html" aria-label="Creator interview from Monterrey">🎙️ Monterrey interview</a></div>
+      </li>
+<li class="card" data-name="montevideo" data-letter="M">
+        <h3>Montevideo</h3>
+        <div class="minis"><a class="mini" href="montevideo-coworking-guide.html" aria-label="Coworking guide for Montevideo">📖 Montevideo coworking guide</a><a class="mini" href="montevideo-podcast-proposal.html" aria-label="Creator interview from Montevideo">🎙️ Montevideo interview</a></div>
+      </li>
+<li class="card" data-name="montreal" data-letter="M">
+        <h3>Montreal</h3>
+        <div class="minis"><a class="mini" href="montreal-coworking-guide.html" aria-label="Coworking guide for Montreal">📖 Montreal coworking guide</a><a class="mini" href="montreal-podcast-proposal.html" aria-label="Creator interview from Montreal">🎙️ Montreal interview</a></div>
+      </li>
+<li class="card" data-name="moscow" data-letter="M">
+        <h3>Moscow</h3>
+        <div class="minis"><a class="mini" href="moscow-coworking-guide.html" aria-label="Coworking guide for Moscow">📖 Moscow coworking guide</a><a class="mini" href="moscow-podcast-proposal.html" aria-label="Creator interview from Moscow">🎙️ Moscow interview</a></div>
+      </li>
+<li class="card" data-name="mumbai" data-letter="M">
+        <h3>Mumbai</h3>
+        <div class="minis"><a class="mini" href="mumbai-coworking-guide.html" aria-label="Coworking guide for Mumbai">📖 Mumbai coworking guide</a><a class="mini" href="mumbai-podcast-proposal.html" aria-label="Creator interview from Mumbai">🎙️ Mumbai interview</a></div>
+      </li>
+<li class="card" data-name="munich" data-letter="M">
+        <h3>Munich</h3>
+        <div class="minis"><a class="mini" href="munich-coworking-guide.html" aria-label="Coworking guide for Munich">📖 Munich coworking guide</a><a class="mini" href="munich-podcast-proposal.html" aria-label="Creator interview from Munich">🎙️ Munich interview</a></div>
+      </li>
+<li class="card" data-name="muscat" data-letter="M">
+        <h3>Muscat</h3>
+        <div class="minis"><a class="mini" href="muscat-coworking-guide.html" aria-label="Coworking guide for Muscat">📖 Muscat coworking guide</a><a class="mini" href="muscat-podcast-proposal.html" aria-label="Creator interview from Muscat">🎙️ Muscat interview</a></div>
+      </li>
+<li class="card" data-name="nagoya" data-letter="N">
+        <h3>Nagoya</h3>
+        <div class="minis"><a class="mini" href="nagoya-coworking-guide.html" aria-label="Coworking guide for Nagoya">📖 Nagoya coworking guide</a><a class="mini" href="nagoya-podcast-proposal.html" aria-label="Creator interview from Nagoya">🎙️ Nagoya interview</a></div>
+      </li>
+<li class="card" data-name="nairobi" data-letter="N">
+        <h3>Nairobi</h3>
+        <div class="minis"><a class="mini" href="nairobi-coworking-guide.html" aria-label="Coworking guide for Nairobi">📖 Nairobi coworking guide</a><a class="mini" href="nairobi-podcast-proposal.html" aria-label="Creator interview from Nairobi">🎙️ Nairobi interview</a></div>
+      </li>
+<li class="card" data-name="nashville" data-letter="N">
+        <h3>Nashville</h3>
+        <div class="minis"><a class="mini" href="nashville-coworking-guide.html" aria-label="Coworking guide for Nashville">📖 Nashville coworking guide</a><a class="mini" href="nashville-podcast-proposal.html" aria-label="Creator interview from Nashville">🎙️ Nashville interview</a></div>
+      </li>
+<li class="card" data-name="nassau" data-letter="N">
+        <h3>Nassau</h3>
+        <div class="minis"><a class="mini" href="nassau-coworking-guide.html" aria-label="Coworking guide for Nassau">📖 Nassau coworking guide</a><a class="mini" href="nassau-podcast-proposal.html" aria-label="Creator interview from Nassau">🎙️ Nassau interview</a></div>
+      </li>
+<li class="card" data-name="new delhi" data-letter="N">
+        <h3>New Delhi</h3>
+        <div class="minis"><a class="mini" href="new-delhi-coworking-guide.html" aria-label="Coworking guide for New Delhi">📖 New Delhi coworking guide</a><a class="mini" href="new-delhi-podcast-proposal.html" aria-label="Creator interview from New Delhi">🎙️ New Delhi interview</a></div>
+      </li>
+<li class="card" data-name="new orleans" data-letter="N">
+        <h3>New Orleans</h3>
+        <div class="minis"><a class="mini" href="new-orleans-coworking-guide.html" aria-label="Coworking guide for New Orleans">📖 New Orleans coworking guide</a><a class="mini" href="new-orleans-podcast-proposal.html" aria-label="Creator interview from New Orleans">🎙️ New Orleans interview</a></div>
+      </li>
+<li class="card" data-name="new york" data-letter="N">
+        <h3>New York</h3>
+        <div class="minis"><a class="mini" href="new-york-podcast-proposal.html" aria-label="Creator interview from New York">🎙️ New York interview</a></div>
+      </li>
+<li class="card" data-name="new york city" data-letter="N">
+        <h3>New York City</h3>
+        <div class="minis"><a class="mini" href="new-york-city-coworking-guide.html" aria-label="Coworking guide for New York City">📖 New York City coworking guide</a><a class="mini" href="new-york-city-podcast-proposal.html" aria-label="Creator interview from New York City">🎙️ New York City interview</a></div>
+      </li>
+<li class="card" data-name="newcastle" data-letter="N">
+        <h3>Newcastle</h3>
+        <div class="minis"><a class="mini" href="newcastle-coworking-guide.html" aria-label="Coworking guide for Newcastle">📖 Newcastle coworking guide</a><a class="mini" href="newcastle-podcast-proposal.html" aria-label="Creator interview from Newcastle">🎙️ Newcastle interview</a></div>
+      </li>
+<li class="card" data-name="nice" data-letter="N">
+        <h3>Nice</h3>
+        <div class="minis"><a class="mini" href="nice-podcast-proposal.html" aria-label="Creator interview from Nice">🎙️ Nice interview</a></div>
+      </li>
+<li class="card" data-name="nuremberg" data-letter="N">
+        <h3>Nuremberg</h3>
+        <div class="minis"><a class="mini" href="nuremberg-coworking-guide.html" aria-label="Coworking guide for Nuremberg">📖 Nuremberg coworking guide</a><a class="mini" href="nuremberg-podcast-proposal.html" aria-label="Creator interview from Nuremberg">🎙️ Nuremberg interview</a></div>
+      </li>
+<li class="card" data-name="oaxaca" data-letter="O">
+        <h3>Oaxaca</h3>
+        <div class="minis"><a class="mini" href="oaxaca-podcast-proposal.html" aria-label="Creator interview from Oaxaca">🎙️ Oaxaca interview</a></div>
+      </li>
+<li class="card" data-name="odesa" data-letter="O">
+        <h3>Odesa</h3>
+        <div class="minis"><a class="mini" href="odesa-coworking-guide.html" aria-label="Coworking guide for Odesa">📖 Odesa coworking guide</a><a class="mini" href="odesa-podcast-proposal.html" aria-label="Creator interview from Odesa">🎙️ Odesa interview</a></div>
+      </li>
+<li class="card" data-name="oklahoma city" data-letter="O">
+        <h3>Oklahoma City</h3>
+        <div class="minis"><a class="mini" href="oklahoma-city-coworking-guide.html" aria-label="Coworking guide for Oklahoma City">📖 Oklahoma City coworking guide</a><a class="mini" href="oklahoma-city-podcast-proposal.html" aria-label="Creator interview from Oklahoma City">🎙️ Oklahoma City interview</a></div>
+      </li>
+<li class="card" data-name="omaha" data-letter="O">
+        <h3>Omaha</h3>
+        <div class="minis"><a class="mini" href="omaha-coworking-guide.html" aria-label="Coworking guide for Omaha">📖 Omaha coworking guide</a><a class="mini" href="omaha-podcast-proposal.html" aria-label="Creator interview from Omaha">🎙️ Omaha interview</a></div>
+      </li>
+<li class="card" data-name="osaka" data-letter="O">
+        <h3>Osaka</h3>
+        <div class="minis"><a class="mini" href="osaka-coworking-guide.html" aria-label="Coworking guide for Osaka">📖 Osaka coworking guide</a><a class="mini" href="osaka-podcast-proposal.html" aria-label="Creator interview from Osaka">🎙️ Osaka interview</a></div>
+      </li>
+<li class="card" data-name="oslo" data-letter="O">
+        <h3>Oslo</h3>
+        <div class="minis"><a class="mini" href="oslo-coworking-guide.html" aria-label="Coworking guide for Oslo">📖 Oslo coworking guide</a><a class="mini" href="oslo-podcast-proposal.html" aria-label="Creator interview from Oslo">🎙️ Oslo interview</a></div>
+      </li>
+<li class="card" data-name="ottawa" data-letter="O">
+        <h3>Ottawa</h3>
+        <div class="minis"><a class="mini" href="ottawa-coworking-guide.html" aria-label="Coworking guide for Ottawa">📖 Ottawa coworking guide</a><a class="mini" href="ottawa-podcast-proposal.html" aria-label="Creator interview from Ottawa">🎙️ Ottawa interview</a></div>
+      </li>
+<li class="card" data-name="panama city" data-letter="P">
+        <h3>Panama City</h3>
+        <div class="minis"><a class="mini" href="panama-city-coworking-guide.html" aria-label="Coworking guide for Panama City">📖 Panama City coworking guide</a><a class="mini" href="panama-city-podcast-proposal.html" aria-label="Creator interview from Panama City">🎙️ Panama City interview</a></div>
+      </li>
+<li class="card" data-name="paris" data-letter="P">
+        <h3>Paris</h3>
+        <div class="minis"><a class="mini" href="paris-coworking-guide.html" aria-label="Coworking guide for Paris">📖 Paris coworking guide</a><a class="mini" href="paris-podcast-proposal.html" aria-label="Creator interview from Paris">🎙️ Paris interview</a></div>
+      </li>
+<li class="card" data-name="penang" data-letter="P">
+        <h3>Penang</h3>
+        <div class="minis"><a class="mini" href="penang-podcast-proposal.html" aria-label="Creator interview from Penang">🎙️ Penang interview</a></div>
+      </li>
+<li class="card" data-name="perth" data-letter="P">
+        <h3>Perth</h3>
+        <div class="minis"><a class="mini" href="perth-coworking-guide.html" aria-label="Coworking guide for Perth">📖 Perth coworking guide</a><a class="mini" href="perth-podcast-proposal.html" aria-label="Creator interview from Perth">🎙️ Perth interview</a></div>
+      </li>
+<li class="card" data-name="philadelphia" data-letter="P">
+        <h3>Philadelphia</h3>
+        <div class="minis"><a class="mini" href="philadelphia-coworking-guide.html" aria-label="Coworking guide for Philadelphia">📖 Philadelphia coworking guide</a><a class="mini" href="philadelphia-podcast-proposal.html" aria-label="Creator interview from Philadelphia">🎙️ Philadelphia interview</a></div>
+      </li>
+<li class="card" data-name="phnom penh" data-letter="P">
+        <h3>Phnom Penh</h3>
+        <div class="minis"><a class="mini" href="phnom-penh-coworking-guide.html" aria-label="Coworking guide for Phnom Penh">📖 Phnom Penh coworking guide</a><a class="mini" href="phnom-penh-podcast-proposal.html" aria-label="Creator interview from Phnom Penh">🎙️ Phnom Penh interview</a></div>
+      </li>
+<li class="card" data-name="phoenix" data-letter="P">
+        <h3>Phoenix</h3>
+        <div class="minis"><a class="mini" href="phoenix-coworking-guide.html" aria-label="Coworking guide for Phoenix">📖 Phoenix coworking guide</a><a class="mini" href="phoenix-podcast-proposal.html" aria-label="Creator interview from Phoenix">🎙️ Phoenix interview</a></div>
+      </li>
+<li class="card" data-name="phuket" data-letter="P">
+        <h3>Phuket</h3>
+        <div class="minis"><a class="mini" href="phuket-podcast-proposal.html" aria-label="Creator interview from Phuket">🎙️ Phuket interview</a></div>
+      </li>
+<li class="card" data-name="playa del carmen" data-letter="P">
+        <h3>Playa Del Carmen</h3>
+        <div class="minis"><a class="mini" href="playa-del-carmen-podcast-proposal.html" aria-label="Creator interview from Playa Del Carmen">🎙️ Playa Del Carmen interview</a></div>
+      </li>
+<li class="card" data-name="plovdiv" data-letter="P">
+        <h3>Plovdiv</h3>
+        <div class="minis"><a class="mini" href="plovdiv-podcast-proposal.html" aria-label="Creator interview from Plovdiv">🎙️ Plovdiv interview</a></div>
+      </li>
+<li class="card" data-name="pokhara" data-letter="P">
+        <h3>Pokhara</h3>
+        <div class="minis"><a class="mini" href="pokhara-podcast-proposal.html" aria-label="Creator interview from Pokhara">🎙️ Pokhara interview</a></div>
+      </li>
+<li class="card" data-name="port au prince" data-letter="P">
+        <h3>Port Au Prince</h3>
+        <div class="minis"><a class="mini" href="port-au-prince-coworking-guide.html" aria-label="Coworking guide for Port Au Prince">📖 Port Au Prince coworking guide</a><a class="mini" href="port-au-prince-podcast-proposal.html" aria-label="Creator interview from Port Au Prince">🎙️ Port Au Prince interview</a></div>
+      </li>
+<li class="card" data-name="port of spain" data-letter="P">
+        <h3>Port Of Spain</h3>
+        <div class="minis"><a class="mini" href="port-of-spain-coworking-guide.html" aria-label="Coworking guide for Port Of Spain">📖 Port Of Spain coworking guide</a><a class="mini" href="port-of-spain-podcast-proposal.html" aria-label="Creator interview from Port Of Spain">🎙️ Port Of Spain interview</a></div>
+      </li>
+<li class="card" data-name="portland" data-letter="P">
+        <h3>Portland</h3>
+        <div class="minis"><a class="mini" href="portland-coworking-guide.html" aria-label="Coworking guide for Portland">📖 Portland coworking guide</a><a class="mini" href="portland-podcast-proposal.html" aria-label="Creator interview from Portland">🎙️ Portland interview</a></div>
+      </li>
+<li class="card" data-name="porto" data-letter="P">
+        <h3>Porto</h3>
+        <div class="minis"><a class="mini" href="porto-podcast-proposal.html" aria-label="Creator interview from Porto">🎙️ Porto interview</a></div>
+      </li>
+<li class="card" data-name="prague" data-letter="P">
+        <h3>Prague</h3>
+        <div class="minis"><a class="mini" href="prague-coworking-guide.html" aria-label="Coworking guide for Prague">📖 Prague coworking guide</a><a class="mini" href="prague-podcast-proposal.html" aria-label="Creator interview from Prague">🎙️ Prague interview</a></div>
+      </li>
+<li class="card" data-name="pretoria" data-letter="P">
+        <h3>Pretoria</h3>
+        <div class="minis"><a class="mini" href="pretoria-podcast-proposal.html" aria-label="Creator interview from Pretoria">🎙️ Pretoria interview</a></div>
+      </li>
+<li class="card" data-name="puebla" data-letter="P">
+        <h3>Puebla</h3>
+        <div class="minis"><a class="mini" href="puebla-coworking-guide.html" aria-label="Coworking guide for Puebla">📖 Puebla coworking guide</a><a class="mini" href="puebla-podcast-proposal.html" aria-label="Creator interview from Puebla">🎙️ Puebla interview</a></div>
+      </li>
+<li class="card" data-name="puerto vallarta" data-letter="P">
+        <h3>Puerto Vallarta</h3>
+        <div class="minis"><a class="mini" href="puerto-vallarta-podcast-proposal.html" aria-label="Creator interview from Puerto Vallarta">🎙️ Puerto Vallarta interview</a></div>
+      </li>
+<li class="card" data-name="pune" data-letter="P">
+        <h3>Pune</h3>
+        <div class="minis"><a class="mini" href="pune-podcast-proposal.html" aria-label="Creator interview from Pune">🎙️ Pune interview</a></div>
+      </li>
+<li class="card" data-name="quebec city" data-letter="Q">
+        <h3>Quebec City</h3>
+        <div class="minis"><a class="mini" href="quebec-city-coworking-guide.html" aria-label="Coworking guide for Quebec City">📖 Quebec City coworking guide</a><a class="mini" href="quebec-city-podcast-proposal.html" aria-label="Creator interview from Quebec City">🎙️ Quebec City interview</a></div>
+      </li>
+<li class="card" data-name="quito" data-letter="Q">
+        <h3>Quito</h3>
+        <div class="minis"><a class="mini" href="quito-coworking-guide.html" aria-label="Coworking guide for Quito">📖 Quito coworking guide</a><a class="mini" href="quito-podcast-proposal.html" aria-label="Creator interview from Quito">🎙️ Quito interview</a></div>
+      </li>
+<li class="card" data-name="reykjavik" data-letter="R">
+        <h3>Reykjavik</h3>
+        <div class="minis"><a class="mini" href="reykjavik-coworking-guide.html" aria-label="Coworking guide for Reykjavik">📖 Reykjavik coworking guide</a><a class="mini" href="reykjavik-podcast-proposal.html" aria-label="Creator interview from Reykjavik">🎙️ Reykjavik interview</a></div>
+      </li>
+<li class="card" data-name="riga" data-letter="R">
+        <h3>Riga</h3>
+        <div class="minis"><a class="mini" href="riga-coworking-guide.html" aria-label="Coworking guide for Riga">📖 Riga coworking guide</a><a class="mini" href="riga-podcast-proposal.html" aria-label="Creator interview from Riga">🎙️ Riga interview</a></div>
+      </li>
+<li class="card" data-name="rio de janeiro" data-letter="R">
+        <h3>Rio De Janeiro</h3>
+        <div class="minis"><a class="mini" href="rio-de-janeiro-coworking-guide.html" aria-label="Coworking guide for Rio De Janeiro">📖 Rio De Janeiro coworking guide</a><a class="mini" href="rio-de-janeiro-podcast-proposal.html" aria-label="Creator interview from Rio De Janeiro">🎙️ Rio De Janeiro interview</a></div>
+      </li>
+<li class="card" data-name="riyadh" data-letter="R">
+        <h3>Riyadh</h3>
+        <div class="minis"><a class="mini" href="riyadh-coworking-guide.html" aria-label="Coworking guide for Riyadh">📖 Riyadh coworking guide</a><a class="mini" href="riyadh-podcast-proposal.html" aria-label="Creator interview from Riyadh">🎙️ Riyadh interview</a></div>
+      </li>
+<li class="card" data-name="rome" data-letter="R">
+        <h3>Rome</h3>
+        <div class="minis"><a class="mini" href="rome-coworking-guide.html" aria-label="Coworking guide for Rome">📖 Rome coworking guide</a><a class="mini" href="rome-podcast-proposal.html" aria-label="Creator interview from Rome">🎙️ Rome interview</a></div>
+      </li>
+<li class="card" data-name="rotterdam" data-letter="R">
+        <h3>Rotterdam</h3>
+        <div class="minis"><a class="mini" href="rotterdam-podcast-proposal.html" aria-label="Creator interview from Rotterdam">🎙️ Rotterdam interview</a></div>
+      </li>
+<li class="card" data-name="sacramento" data-letter="S">
+        <h3>Sacramento</h3>
+        <div class="minis"><a class="mini" href="sacramento-coworking-guide.html" aria-label="Coworking guide for Sacramento">📖 Sacramento coworking guide</a><a class="mini" href="sacramento-podcast-proposal.html" aria-label="Creator interview from Sacramento">🎙️ Sacramento interview</a></div>
+      </li>
+<li class="card" data-name="salalah" data-letter="S">
+        <h3>Salalah</h3>
+        <div class="minis"><a class="mini" href="salalah-podcast-proposal.html" aria-label="Creator interview from Salalah">🎙️ Salalah interview</a></div>
+      </li>
+<li class="card" data-name="salvador" data-letter="S">
+        <h3>Salvador</h3>
+        <div class="minis"><a class="mini" href="salvador-podcast-proposal.html" aria-label="Creator interview from Salvador">🎙️ Salvador interview</a></div>
+      </li>
+<li class="card" data-name="samarkand" data-letter="S">
+        <h3>Samarkand</h3>
+        <div class="minis"><a class="mini" href="samarkand-podcast-proposal.html" aria-label="Creator interview from Samarkand">🎙️ Samarkand interview</a></div>
+      </li>
+<li class="card" data-name="san diego" data-letter="S">
+        <h3>San Diego</h3>
+        <div class="minis"><a class="mini" href="san-diego-coworking-guide.html" aria-label="Coworking guide for San Diego">📖 San Diego coworking guide</a><a class="mini" href="san-diego-podcast-proposal.html" aria-label="Creator interview from San Diego">🎙️ San Diego interview</a></div>
+      </li>
+<li class="card" data-name="san francisco" data-letter="S">
+        <h3>San Francisco</h3>
+        <div class="minis"><a class="mini" href="san-francisco-coworking-guide.html" aria-label="Coworking guide for San Francisco">📖 San Francisco coworking guide</a><a class="mini" href="san-francisco-podcast-proposal.html" aria-label="Creator interview from San Francisco">🎙️ San Francisco interview</a></div>
+      </li>
+<li class="card" data-name="san jose" data-letter="S">
+        <h3>San Jose</h3>
+        <div class="minis"><a class="mini" href="san-jose-coworking-guide.html" aria-label="Coworking guide for San Jose">📖 San Jose coworking guide</a><a class="mini" href="san-jose-podcast-proposal.html" aria-label="Creator interview from San Jose">🎙️ San Jose interview</a></div>
+      </li>
+<li class="card" data-name="san jose cr" data-letter="S">
+        <h3>San Jose Cr</h3>
+        <div class="minis"><a class="mini" href="san-jose-cr-podcast-proposal.html" aria-label="Creator interview from San Jose Cr">🎙️ San Jose Cr interview</a></div>
+      </li>
+<li class="card" data-name="san juan" data-letter="S">
+        <h3>San Juan</h3>
+        <div class="minis"><a class="mini" href="san-juan-coworking-guide.html" aria-label="Coworking guide for San Juan">📖 San Juan coworking guide</a><a class="mini" href="san-juan-podcast-proposal.html" aria-label="Creator interview from San Juan">🎙️ San Juan interview</a></div>
+      </li>
+<li class="card" data-name="san salvador" data-letter="S">
+        <h3>San Salvador</h3>
+        <div class="minis"><a class="mini" href="san-salvador-coworking-guide.html" aria-label="Coworking guide for San Salvador">📖 San Salvador coworking guide</a><a class="mini" href="san-salvador-podcast-proposal.html" aria-label="Creator interview from San Salvador">🎙️ San Salvador interview</a></div>
+      </li>
+<li class="card" data-name="santa marta" data-letter="S">
+        <h3>Santa Marta</h3>
+        <div class="minis"><a class="mini" href="santa-marta-podcast-proposal.html" aria-label="Creator interview from Santa Marta">🎙️ Santa Marta interview</a></div>
+      </li>
+<li class="card" data-name="santiago" data-letter="S">
+        <h3>Santiago</h3>
+        <div class="minis"><a class="mini" href="santiago-coworking-guide.html" aria-label="Coworking guide for Santiago">📖 Santiago coworking guide</a><a class="mini" href="santiago-podcast-proposal.html" aria-label="Creator interview from Santiago">🎙️ Santiago interview</a></div>
+      </li>
+<li class="card" data-name="santo domingo" data-letter="S">
+        <h3>Santo Domingo</h3>
+        <div class="minis"><a class="mini" href="santo-domingo-coworking-guide.html" aria-label="Coworking guide for Santo Domingo">📖 Santo Domingo coworking guide</a><a class="mini" href="santo-domingo-podcast-proposal.html" aria-label="Creator interview from Santo Domingo">🎙️ Santo Domingo interview</a></div>
+      </li>
+<li class="card" data-name="sao paulo" data-letter="S">
+        <h3>Sao Paulo</h3>
+        <div class="minis"><a class="mini" href="sao-paulo-coworking-guide.html" aria-label="Coworking guide for Sao Paulo">📖 Sao Paulo coworking guide</a><a class="mini" href="sao-paulo-podcast-proposal.html" aria-label="Creator interview from Sao Paulo">🎙️ Sao Paulo interview</a></div>
+      </li>
+<li class="card" data-name="sapporo" data-letter="S">
+        <h3>Sapporo</h3>
+        <div class="minis"><a class="mini" href="sapporo-podcast-proposal.html" aria-label="Creator interview from Sapporo">🎙️ Sapporo interview</a></div>
+      </li>
+<li class="card" data-name="sarajevo" data-letter="S">
+        <h3>Sarajevo</h3>
+        <div class="minis"><a class="mini" href="sarajevo-coworking-guide.html" aria-label="Coworking guide for Sarajevo">📖 Sarajevo coworking guide</a><a class="mini" href="sarajevo-podcast-proposal.html" aria-label="Creator interview from Sarajevo">🎙️ Sarajevo interview</a></div>
+      </li>
+<li class="card" data-name="seattle" data-letter="S">
+        <h3>Seattle</h3>
+        <div class="minis"><a class="mini" href="seattle-coworking-guide.html" aria-label="Coworking guide for Seattle">📖 Seattle coworking guide</a><a class="mini" href="seattle-podcast-proposal.html" aria-label="Creator interview from Seattle">🎙️ Seattle interview</a></div>
+      </li>
+<li class="card" data-name="seoul" data-letter="S">
+        <h3>Seoul</h3>
+        <div class="minis"><a class="mini" href="seoul-coworking-guide.html" aria-label="Coworking guide for Seoul">📖 Seoul coworking guide</a><a class="mini" href="seoul-podcast-proposal.html" aria-label="Creator interview from Seoul">🎙️ Seoul interview</a></div>
+      </li>
+<li class="card" data-name="seville" data-letter="S">
+        <h3>Seville</h3>
+        <div class="minis"><a class="mini" href="seville-podcast-proposal.html" aria-label="Creator interview from Seville">🎙️ Seville interview</a></div>
+      </li>
+<li class="card" data-name="shanghai" data-letter="S">
+        <h3>Shanghai</h3>
+        <div class="minis"><a class="mini" href="shanghai-coworking-guide.html" aria-label="Coworking guide for Shanghai">📖 Shanghai coworking guide</a><a class="mini" href="shanghai-podcast-proposal.html" aria-label="Creator interview from Shanghai">🎙️ Shanghai interview</a></div>
+      </li>
+<li class="card" data-name="sharjah" data-letter="S">
+        <h3>Sharjah</h3>
+        <div class="minis"><a class="mini" href="sharjah-podcast-proposal.html" aria-label="Creator interview from Sharjah">🎙️ Sharjah interview</a></div>
+      </li>
+<li class="card" data-name="sheffield" data-letter="S">
+        <h3>Sheffield</h3>
+        <div class="minis"><a class="mini" href="sheffield-coworking-guide.html" aria-label="Coworking guide for Sheffield">📖 Sheffield coworking guide</a><a class="mini" href="sheffield-podcast-proposal.html" aria-label="Creator interview from Sheffield">🎙️ Sheffield interview</a></div>
+      </li>
+<li class="card" data-name="shenzhen" data-letter="S">
+        <h3>Shenzhen</h3>
+        <div class="minis"><a class="mini" href="shenzhen-podcast-proposal.html" aria-label="Creator interview from Shenzhen">🎙️ Shenzhen interview</a></div>
+      </li>
+<li class="card" data-name="singapore" data-letter="S">
+        <h3>Singapore</h3>
+        <div class="minis"><a class="mini" href="singapore-coworking-guide.html" aria-label="Coworking guide for Singapore">📖 Singapore coworking guide</a><a class="mini" href="singapore-podcast-proposal.html" aria-label="Creator interview from Singapore">🎙️ Singapore interview</a></div>
+      </li>
+<li class="card" data-name="skopje" data-letter="S">
+        <h3>Skopje</h3>
+        <div class="minis"><a class="mini" href="skopje-coworking-guide.html" aria-label="Coworking guide for Skopje">📖 Skopje coworking guide</a><a class="mini" href="skopje-podcast-proposal.html" aria-label="Creator interview from Skopje">🎙️ Skopje interview</a></div>
+      </li>
+<li class="card" data-name="sofia" data-letter="S">
+        <h3>Sofia</h3>
+        <div class="minis"><a class="mini" href="sofia-podcast-proposal.html" aria-label="Creator interview from Sofia">🎙️ Sofia interview</a></div>
+      </li>
+<li class="card" data-name="split" data-letter="S">
+        <h3>Split</h3>
+        <div class="minis"><a class="mini" href="split-podcast-proposal.html" aria-label="Creator interview from Split">🎙️ Split interview</a></div>
+      </li>
+<li class="card" data-name="st petersburg" data-letter="S">
+        <h3>St Petersburg</h3>
+        <div class="minis"><a class="mini" href="st-petersburg-coworking-guide.html" aria-label="Coworking guide for St Petersburg">📖 St Petersburg coworking guide</a><a class="mini" href="st-petersburg-podcast-proposal.html" aria-label="Creator interview from St Petersburg">🎙️ St Petersburg interview</a></div>
+      </li>
+<li class="card" data-name="stockholm" data-letter="S">
+        <h3>Stockholm</h3>
+        <div class="minis"><a class="mini" href="stockholm-coworking-guide.html" aria-label="Coworking guide for Stockholm">📖 Stockholm coworking guide</a><a class="mini" href="stockholm-podcast-proposal.html" aria-label="Creator interview from Stockholm">🎙️ Stockholm interview</a></div>
+      </li>
+<li class="card" data-name="stuttgart" data-letter="S">
+        <h3>Stuttgart</h3>
+        <div class="minis"><a class="mini" href="stuttgart-coworking-guide.html" aria-label="Coworking guide for Stuttgart">📖 Stuttgart coworking guide</a><a class="mini" href="stuttgart-podcast-proposal.html" aria-label="Creator interview from Stuttgart">🎙️ Stuttgart interview</a></div>
+      </li>
+<li class="card" data-name="surrey" data-letter="S">
+        <h3>Surrey</h3>
+        <div class="minis"><a class="mini" href="surrey-coworking-guide.html" aria-label="Coworking guide for Surrey">📖 Surrey coworking guide</a><a class="mini" href="surrey-podcast-proposal.html" aria-label="Creator interview from Surrey">🎙️ Surrey interview</a></div>
+      </li>
+<li class="card" data-name="sydney" data-letter="S">
+        <h3>Sydney</h3>
+        <div class="minis"><a class="mini" href="sydney-coworking-guide.html" aria-label="Coworking guide for Sydney">📖 Sydney coworking guide</a><a class="mini" href="sydney-podcast-proposal.html" aria-label="Creator interview from Sydney">🎙️ Sydney interview</a></div>
+      </li>
+<li class="card" data-name="taghazout" data-letter="T">
+        <h3>Taghazout</h3>
+        <div class="minis"><a class="mini" href="taghazout-podcast-proposal.html" aria-label="Creator interview from Taghazout">🎙️ Taghazout interview</a></div>
+      </li>
+<li class="card" data-name="taichung" data-letter="T">
+        <h3>Taichung</h3>
+        <div class="minis"><a class="mini" href="taichung-podcast-proposal.html" aria-label="Creator interview from Taichung">🎙️ Taichung interview</a></div>
+      </li>
+<li class="card" data-name="taipei" data-letter="T">
+        <h3>Taipei</h3>
+        <div class="minis"><a class="mini" href="taipei-coworking-guide.html" aria-label="Coworking guide for Taipei">📖 Taipei coworking guide</a><a class="mini" href="taipei-podcast-proposal.html" aria-label="Creator interview from Taipei">🎙️ Taipei interview</a></div>
+      </li>
+<li class="card" data-name="tallinn" data-letter="T">
+        <h3>Tallinn</h3>
+        <div class="minis"><a class="mini" href="tallinn-coworking-guide.html" aria-label="Coworking guide for Tallinn">📖 Tallinn coworking guide</a><a class="mini" href="tallinn-podcast-proposal.html" aria-label="Creator interview from Tallinn">🎙️ Tallinn interview</a></div>
+      </li>
+<li class="card" data-name="tartu" data-letter="T">
+        <h3>Tartu</h3>
+        <div class="minis"><a class="mini" href="tartu-podcast-proposal.html" aria-label="Creator interview from Tartu">🎙️ Tartu interview</a></div>
+      </li>
+<li class="card" data-name="tashkent" data-letter="T">
+        <h3>Tashkent</h3>
+        <div class="minis"><a class="mini" href="tashkent-coworking-guide.html" aria-label="Coworking guide for Tashkent">📖 Tashkent coworking guide</a><a class="mini" href="tashkent-podcast-proposal.html" aria-label="Creator interview from Tashkent">🎙️ Tashkent interview</a></div>
+      </li>
+<li class="card" data-name="tbilisi" data-letter="T">
+        <h3>Tbilisi</h3>
+        <div class="minis"><a class="mini" href="tbilisi-coworking-guide.html" aria-label="Coworking guide for Tbilisi">📖 Tbilisi coworking guide</a><a class="mini" href="tbilisi-podcast-proposal.html" aria-label="Creator interview from Tbilisi">🎙️ Tbilisi interview</a></div>
+      </li>
+<li class="card" data-name="tel aviv" data-letter="T">
+        <h3>Tel Aviv</h3>
+        <div class="minis"><a class="mini" href="tel-aviv-coworking-guide.html" aria-label="Coworking guide for Tel Aviv">📖 Tel Aviv coworking guide</a><a class="mini" href="tel-aviv-podcast-proposal.html" aria-label="Creator interview from Tel Aviv">🎙️ Tel Aviv interview</a></div>
+      </li>
+<li class="card" data-name="thimphu" data-letter="T">
+        <h3>Thimphu</h3>
+        <div class="minis"><a class="mini" href="thimphu-podcast-proposal.html" aria-label="Creator interview from Thimphu">🎙️ Thimphu interview</a></div>
+      </li>
+<li class="card" data-name="tijuana" data-letter="T">
+        <h3>Tijuana</h3>
+        <div class="minis"><a class="mini" href="tijuana-coworking-guide.html" aria-label="Coworking guide for Tijuana">📖 Tijuana coworking guide</a><a class="mini" href="tijuana-podcast-proposal.html" aria-label="Creator interview from Tijuana">🎙️ Tijuana interview</a></div>
+      </li>
+<li class="card" data-name="tirana" data-letter="T">
+        <h3>Tirana</h3>
+        <div class="minis"><a class="mini" href="tirana-coworking-guide.html" aria-label="Coworking guide for Tirana">📖 Tirana coworking guide</a><a class="mini" href="tirana-podcast-proposal.html" aria-label="Creator interview from Tirana">🎙️ Tirana interview</a></div>
+      </li>
+<li class="card" data-name="tokyo" data-letter="T">
+        <h3>Tokyo</h3>
+        <div class="minis"><a class="mini" href="tokyo-coworking-guide.html" aria-label="Coworking guide for Tokyo">📖 Tokyo coworking guide</a><a class="mini" href="tokyo-podcast-proposal.html" aria-label="Creator interview from Tokyo">🎙️ Tokyo interview</a></div>
+      </li>
+<li class="card" data-name="toronto" data-letter="T">
+        <h3>Toronto</h3>
+        <div class="minis"><a class="mini" href="toronto-coworking-guide.html" aria-label="Coworking guide for Toronto">📖 Toronto coworking guide</a><a class="mini" href="toronto-podcast-proposal.html" aria-label="Creator interview from Toronto">🎙️ Toronto interview</a></div>
+      </li>
+<li class="card" data-name="tripoli" data-letter="T">
+        <h3>Tripoli</h3>
+        <div class="minis"><a class="mini" href="tripoli-coworking-guide.html" aria-label="Coworking guide for Tripoli">📖 Tripoli coworking guide</a><a class="mini" href="tripoli-podcast-proposal.html" aria-label="Creator interview from Tripoli">🎙️ Tripoli interview</a></div>
+      </li>
+<li class="card" data-name="tucson" data-letter="T">
+        <h3>Tucson</h3>
+        <div class="minis"><a class="mini" href="tucson-coworking-guide.html" aria-label="Coworking guide for Tucson">📖 Tucson coworking guide</a><a class="mini" href="tucson-podcast-proposal.html" aria-label="Creator interview from Tucson">🎙️ Tucson interview</a></div>
+      </li>
+<li class="card" data-name="tulum" data-letter="T">
+        <h3>Tulum</h3>
+        <div class="minis"><a class="mini" href="tulum-podcast-proposal.html" aria-label="Creator interview from Tulum">🎙️ Tulum interview</a></div>
+      </li>
+<li class="card" data-name="tunis" data-letter="T">
+        <h3>Tunis</h3>
+        <div class="minis"><a class="mini" href="tunis-coworking-guide.html" aria-label="Coworking guide for Tunis">📖 Tunis coworking guide</a><a class="mini" href="tunis-podcast-proposal.html" aria-label="Creator interview from Tunis">🎙️ Tunis interview</a></div>
+      </li>
+<li class="card" data-name="ulaanbaatar" data-letter="U">
+        <h3>Ulaanbaatar</h3>
+        <div class="minis"><a class="mini" href="ulaanbaatar-coworking-guide.html" aria-label="Coworking guide for Ulaanbaatar">📖 Ulaanbaatar coworking guide</a><a class="mini" href="ulaanbaatar-podcast-proposal.html" aria-label="Creator interview from Ulaanbaatar">🎙️ Ulaanbaatar interview</a></div>
+      </li>
+<li class="card" data-name="valencia" data-letter="V">
+        <h3>Valencia</h3>
+        <div class="minis"><a class="mini" href="valencia-podcast-proposal.html" aria-label="Creator interview from Valencia">🎙️ Valencia interview</a></div>
+      </li>
+<li class="card" data-name="valletta" data-letter="V">
+        <h3>Valletta</h3>
+        <div class="minis"><a class="mini" href="valletta-podcast-proposal.html" aria-label="Creator interview from Valletta">🎙️ Valletta interview</a></div>
+      </li>
+<li class="card" data-name="vancouver" data-letter="V">
+        <h3>Vancouver</h3>
+        <div class="minis"><a class="mini" href="vancouver-coworking-guide.html" aria-label="Coworking guide for Vancouver">📖 Vancouver coworking guide</a><a class="mini" href="vancouver-podcast-proposal.html" aria-label="Creator interview from Vancouver">🎙️ Vancouver interview</a></div>
+      </li>
+<li class="card" data-name="varna" data-letter="V">
+        <h3>Varna</h3>
+        <div class="minis"><a class="mini" href="varna-podcast-proposal.html" aria-label="Creator interview from Varna">🎙️ Varna interview</a></div>
+      </li>
+<li class="card" data-name="vienna" data-letter="V">
+        <h3>Vienna</h3>
+        <div class="minis"><a class="mini" href="vienna-coworking-guide.html" aria-label="Coworking guide for Vienna">📖 Vienna coworking guide</a><a class="mini" href="vienna-podcast-proposal.html" aria-label="Creator interview from Vienna">🎙️ Vienna interview</a></div>
+      </li>
+<li class="card" data-name="vientiane" data-letter="V">
+        <h3>Vientiane</h3>
+        <div class="minis"><a class="mini" href="vientiane-coworking-guide.html" aria-label="Coworking guide for Vientiane">📖 Vientiane coworking guide</a><a class="mini" href="vientiane-podcast-proposal.html" aria-label="Creator interview from Vientiane">🎙️ Vientiane interview</a></div>
+      </li>
+<li class="card" data-name="vilnius" data-letter="V">
+        <h3>Vilnius</h3>
+        <div class="minis"><a class="mini" href="vilnius-coworking-guide.html" aria-label="Coworking guide for Vilnius">📖 Vilnius coworking guide</a><a class="mini" href="vilnius-podcast-proposal.html" aria-label="Creator interview from Vilnius">🎙️ Vilnius interview</a></div>
+      </li>
+<li class="card" data-name="warsaw" data-letter="W">
+        <h3>Warsaw</h3>
+        <div class="minis"><a class="mini" href="warsaw-coworking-guide.html" aria-label="Coworking guide for Warsaw">📖 Warsaw coworking guide</a><a class="mini" href="warsaw-podcast-proposal.html" aria-label="Creator interview from Warsaw">🎙️ Warsaw interview</a></div>
+      </li>
+<li class="card" data-name="washington dc" data-letter="W">
+        <h3>Washington Dc</h3>
+        <div class="minis"><a class="mini" href="washington-dc-coworking-guide.html" aria-label="Coworking guide for Washington Dc">📖 Washington Dc coworking guide</a><a class="mini" href="washington-dc-podcast-proposal.html" aria-label="Creator interview from Washington Dc">🎙️ Washington Dc interview</a></div>
+      </li>
+<li class="card" data-name="wellington" data-letter="W">
+        <h3>Wellington</h3>
+        <div class="minis"><a class="mini" href="wellington-coworking-guide.html" aria-label="Coworking guide for Wellington">📖 Wellington coworking guide</a><a class="mini" href="wellington-podcast-proposal.html" aria-label="Creator interview from Wellington">🎙️ Wellington interview</a></div>
+      </li>
+<li class="card" data-name="windhoek" data-letter="W">
+        <h3>Windhoek</h3>
+        <div class="minis"><a class="mini" href="windhoek-podcast-proposal.html" aria-label="Creator interview from Windhoek">🎙️ Windhoek interview</a></div>
+      </li>
+<li class="card" data-name="winnipeg" data-letter="W">
+        <h3>Winnipeg</h3>
+        <div class="minis"><a class="mini" href="winnipeg-coworking-guide.html" aria-label="Coworking guide for Winnipeg">📖 Winnipeg coworking guide</a><a class="mini" href="winnipeg-podcast-proposal.html" aria-label="Creator interview from Winnipeg">🎙️ Winnipeg interview</a></div>
+      </li>
+<li class="card" data-name="wroclaw" data-letter="W">
+        <h3>Wroclaw</h3>
+        <div class="minis"><a class="mini" href="wroclaw-podcast-proposal.html" aria-label="Creator interview from Wroclaw">🎙️ Wroclaw interview</a></div>
+      </li>
+<li class="card" data-name="yangon" data-letter="Y">
+        <h3>Yangon</h3>
+        <div class="minis"><a class="mini" href="yangon-coworking-guide.html" aria-label="Coworking guide for Yangon">📖 Yangon coworking guide</a><a class="mini" href="yangon-podcast-proposal.html" aria-label="Creator interview from Yangon">🎙️ Yangon interview</a></div>
+      </li>
+<li class="card" data-name="yerevan" data-letter="Y">
+        <h3>Yerevan</h3>
+        <div class="minis"><a class="mini" href="yerevan-coworking-guide.html" aria-label="Coworking guide for Yerevan">📖 Yerevan coworking guide</a><a class="mini" href="yerevan-podcast-proposal.html" aria-label="Creator interview from Yerevan">🎙️ Yerevan interview</a></div>
+      </li>
+<li class="card" data-name="zagreb" data-letter="Z">
+        <h3>Zagreb</h3>
+        <div class="minis"><a class="mini" href="zagreb-coworking-guide.html" aria-label="Coworking guide for Zagreb">📖 Zagreb coworking guide</a><a class="mini" href="zagreb-podcast-proposal.html" aria-label="Creator interview from Zagreb">🎙️ Zagreb interview</a></div>
+      </li>
+<li class="card" data-name="zanzibar" data-letter="Z">
+        <h3>Zanzibar</h3>
+        <div class="minis"><a class="mini" href="zanzibar-podcast-proposal.html" aria-label="Creator interview from Zanzibar">🎙️ Zanzibar interview</a></div>
+      </li>
+<li class="card" data-name="zurich" data-letter="Z">
+        <h3>Zurich</h3>
+        <div class="minis"><a class="mini" href="zurich-coworking-guide.html" aria-label="Coworking guide for Zurich">📖 Zurich coworking guide</a><a class="mini" href="zurich-podcast-proposal.html" aria-label="Creator interview from Zurich">🎙️ Zurich interview</a></div>
+      </li>
+  </ul>
+
+  <h2 class="section-title reveal">⚖️ City-vs-City Head-to-Heads</h2>
+  <ul class="grid" id="vsGrid">
+<li class="card" data-name="bali vs barcelona digital nomad" data-letter="B"><h3>Bali vs Barcelona Digital Nomad</h3><div class="minis"><a class="mini" href="bali-vs-barcelona-digital-nomad.html" aria-label="Head-to-head comparison: Bali vs Barcelona Digital Nomad">⚖️ Bali vs Barcelona Digital Nomad</a></div></li>
+<li class="card" data-name="bali vs berlin digital nomad" data-letter="B"><h3>Bali vs Berlin Digital Nomad</h3><div class="minis"><a class="mini" href="bali-vs-berlin-digital-nomad.html" aria-label="Head-to-head comparison: Bali vs Berlin Digital Nomad">⚖️ Bali vs Berlin Digital Nomad</a></div></li>
+<li class="card" data-name="bali vs chiang mai digital nomad" data-letter="B"><h3>Bali vs Chiang Mai Digital Nomad</h3><div class="minis"><a class="mini" href="bali-vs-chiang-mai-digital-nomad.html" aria-label="Head-to-head comparison: Bali vs Chiang Mai Digital Nomad">⚖️ Bali vs Chiang Mai Digital Nomad</a></div></li>
+<li class="card" data-name="bali vs mexico city digital nomad" data-letter="B"><h3>Bali vs Mexico City Digital Nomad</h3><div class="minis"><a class="mini" href="bali-vs-mexico-city-digital-nomad.html" aria-label="Head-to-head comparison: Bali vs Mexico City Digital Nomad">⚖️ Bali vs Mexico City Digital Nomad</a></div></li>
+<li class="card" data-name="bali vs tbilisi digital nomad" data-letter="B"><h3>Bali vs Tbilisi Digital Nomad</h3><div class="minis"><a class="mini" href="bali-vs-tbilisi-digital-nomad.html" aria-label="Head-to-head comparison: Bali vs Tbilisi Digital Nomad">⚖️ Bali vs Tbilisi Digital Nomad</a></div></li>
+<li class="card" data-name="bali vs tokyo digital nomad" data-letter="B"><h3>Bali vs Tokyo Digital Nomad</h3><div class="minis"><a class="mini" href="bali-vs-tokyo-digital-nomad.html" aria-label="Head-to-head comparison: Bali vs Tokyo Digital Nomad">⚖️ Bali vs Tokyo Digital Nomad</a></div></li>
+<li class="card" data-name="bangkok vs bali digital nomad" data-letter="B"><h3>Bangkok vs Bali Digital Nomad</h3><div class="minis"><a class="mini" href="bangkok-vs-bali-digital-nomad.html" aria-label="Head-to-head comparison: Bangkok vs Bali Digital Nomad">⚖️ Bangkok vs Bali Digital Nomad</a></div></li>
+<li class="card" data-name="bangkok vs barcelona digital nomad" data-letter="B"><h3>Bangkok vs Barcelona Digital Nomad</h3><div class="minis"><a class="mini" href="bangkok-vs-barcelona-digital-nomad.html" aria-label="Head-to-head comparison: Bangkok vs Barcelona Digital Nomad">⚖️ Bangkok vs Barcelona Digital Nomad</a></div></li>
+<li class="card" data-name="bangkok vs berlin digital nomad" data-letter="B"><h3>Bangkok vs Berlin Digital Nomad</h3><div class="minis"><a class="mini" href="bangkok-vs-berlin-digital-nomad.html" aria-label="Head-to-head comparison: Bangkok vs Berlin Digital Nomad">⚖️ Bangkok vs Berlin Digital Nomad</a></div></li>
+<li class="card" data-name="bangkok vs chiang mai digital nomad" data-letter="B"><h3>Bangkok vs Chiang Mai Digital Nomad</h3><div class="minis"><a class="mini" href="bangkok-vs-chiang-mai-digital-nomad.html" aria-label="Head-to-head comparison: Bangkok vs Chiang Mai Digital Nomad">⚖️ Bangkok vs Chiang Mai Digital Nomad</a></div></li>
+<li class="card" data-name="bangkok vs lisbon digital nomad" data-letter="B"><h3>Bangkok vs Lisbon Digital Nomad</h3><div class="minis"><a class="mini" href="bangkok-vs-lisbon-digital-nomad.html" aria-label="Head-to-head comparison: Bangkok vs Lisbon Digital Nomad">⚖️ Bangkok vs Lisbon Digital Nomad</a></div></li>
+<li class="card" data-name="bangkok vs medellin digital nomad" data-letter="B"><h3>Bangkok vs Medellin Digital Nomad</h3><div class="minis"><a class="mini" href="bangkok-vs-medellin-digital-nomad.html" aria-label="Head-to-head comparison: Bangkok vs Medellin Digital Nomad">⚖️ Bangkok vs Medellin Digital Nomad</a></div></li>
+<li class="card" data-name="bangkok vs mexico city digital nomad" data-letter="B"><h3>Bangkok vs Mexico City Digital Nomad</h3><div class="minis"><a class="mini" href="bangkok-vs-mexico-city-digital-nomad.html" aria-label="Head-to-head comparison: Bangkok vs Mexico City Digital Nomad">⚖️ Bangkok vs Mexico City Digital Nomad</a></div></li>
+<li class="card" data-name="bangkok vs tbilisi digital nomad" data-letter="B"><h3>Bangkok vs Tbilisi Digital Nomad</h3><div class="minis"><a class="mini" href="bangkok-vs-tbilisi-digital-nomad.html" aria-label="Head-to-head comparison: Bangkok vs Tbilisi Digital Nomad">⚖️ Bangkok vs Tbilisi Digital Nomad</a></div></li>
+<li class="card" data-name="bangkok vs tokyo digital nomad" data-letter="B"><h3>Bangkok vs Tokyo Digital Nomad</h3><div class="minis"><a class="mini" href="bangkok-vs-tokyo-digital-nomad.html" aria-label="Head-to-head comparison: Bangkok vs Tokyo Digital Nomad">⚖️ Bangkok vs Tokyo Digital Nomad</a></div></li>
+<li class="card" data-name="barcelona vs berlin digital nomad" data-letter="B"><h3>Barcelona vs Berlin Digital Nomad</h3><div class="minis"><a class="mini" href="barcelona-vs-berlin-digital-nomad.html" aria-label="Head-to-head comparison: Barcelona vs Berlin Digital Nomad">⚖️ Barcelona vs Berlin Digital Nomad</a></div></li>
+<li class="card" data-name="barcelona vs tbilisi digital nomad" data-letter="B"><h3>Barcelona vs Tbilisi Digital Nomad</h3><div class="minis"><a class="mini" href="barcelona-vs-tbilisi-digital-nomad.html" aria-label="Head-to-head comparison: Barcelona vs Tbilisi Digital Nomad">⚖️ Barcelona vs Tbilisi Digital Nomad</a></div></li>
+<li class="card" data-name="berlin vs tbilisi digital nomad" data-letter="B"><h3>Berlin vs Tbilisi Digital Nomad</h3><div class="minis"><a class="mini" href="berlin-vs-tbilisi-digital-nomad.html" aria-label="Head-to-head comparison: Berlin vs Tbilisi Digital Nomad">⚖️ Berlin vs Tbilisi Digital Nomad</a></div></li>
+<li class="card" data-name="chiang mai vs barcelona digital nomad" data-letter="C"><h3>Chiang Mai vs Barcelona Digital Nomad</h3><div class="minis"><a class="mini" href="chiang-mai-vs-barcelona-digital-nomad.html" aria-label="Head-to-head comparison: Chiang Mai vs Barcelona Digital Nomad">⚖️ Chiang Mai vs Barcelona Digital Nomad</a></div></li>
+<li class="card" data-name="chiang mai vs berlin digital nomad" data-letter="C"><h3>Chiang Mai vs Berlin Digital Nomad</h3><div class="minis"><a class="mini" href="chiang-mai-vs-berlin-digital-nomad.html" aria-label="Head-to-head comparison: Chiang Mai vs Berlin Digital Nomad">⚖️ Chiang Mai vs Berlin Digital Nomad</a></div></li>
+<li class="card" data-name="chiang mai vs mexico city digital nomad" data-letter="C"><h3>Chiang Mai vs Mexico City Digital Nomad</h3><div class="minis"><a class="mini" href="chiang-mai-vs-mexico-city-digital-nomad.html" aria-label="Head-to-head comparison: Chiang Mai vs Mexico City Digital Nomad">⚖️ Chiang Mai vs Mexico City Digital Nomad</a></div></li>
+<li class="card" data-name="chiang mai vs tbilisi digital nomad" data-letter="C"><h3>Chiang Mai vs Tbilisi Digital Nomad</h3><div class="minis"><a class="mini" href="chiang-mai-vs-tbilisi-digital-nomad.html" aria-label="Head-to-head comparison: Chiang Mai vs Tbilisi Digital Nomad">⚖️ Chiang Mai vs Tbilisi Digital Nomad</a></div></li>
+<li class="card" data-name="chiang mai vs tokyo digital nomad" data-letter="C"><h3>Chiang Mai vs Tokyo Digital Nomad</h3><div class="minis"><a class="mini" href="chiang-mai-vs-tokyo-digital-nomad.html" aria-label="Head-to-head comparison: Chiang Mai vs Tokyo Digital Nomad">⚖️ Chiang Mai vs Tokyo Digital Nomad</a></div></li>
+<li class="card" data-name="lisbon vs bali digital nomad" data-letter="L"><h3>Lisbon vs Bali Digital Nomad</h3><div class="minis"><a class="mini" href="lisbon-vs-bali-digital-nomad.html" aria-label="Head-to-head comparison: Lisbon vs Bali Digital Nomad">⚖️ Lisbon vs Bali Digital Nomad</a></div></li>
+<li class="card" data-name="lisbon vs barcelona digital nomad" data-letter="L"><h3>Lisbon vs Barcelona Digital Nomad</h3><div class="minis"><a class="mini" href="lisbon-vs-barcelona-digital-nomad.html" aria-label="Head-to-head comparison: Lisbon vs Barcelona Digital Nomad">⚖️ Lisbon vs Barcelona Digital Nomad</a></div></li>
+<li class="card" data-name="lisbon vs berlin digital nomad" data-letter="L"><h3>Lisbon vs Berlin Digital Nomad</h3><div class="minis"><a class="mini" href="lisbon-vs-berlin-digital-nomad.html" aria-label="Head-to-head comparison: Lisbon vs Berlin Digital Nomad">⚖️ Lisbon vs Berlin Digital Nomad</a></div></li>
+<li class="card" data-name="lisbon vs chiang mai digital nomad" data-letter="L"><h3>Lisbon vs Chiang Mai Digital Nomad</h3><div class="minis"><a class="mini" href="lisbon-vs-chiang-mai-digital-nomad.html" aria-label="Head-to-head comparison: Lisbon vs Chiang Mai Digital Nomad">⚖️ Lisbon vs Chiang Mai Digital Nomad</a></div></li>
+<li class="card" data-name="lisbon vs medellin digital nomad" data-letter="L"><h3>Lisbon vs Medellin Digital Nomad</h3><div class="minis"><a class="mini" href="lisbon-vs-medellin-digital-nomad.html" aria-label="Head-to-head comparison: Lisbon vs Medellin Digital Nomad">⚖️ Lisbon vs Medellin Digital Nomad</a></div></li>
+<li class="card" data-name="lisbon vs mexico city digital nomad" data-letter="L"><h3>Lisbon vs Mexico City Digital Nomad</h3><div class="minis"><a class="mini" href="lisbon-vs-mexico-city-digital-nomad.html" aria-label="Head-to-head comparison: Lisbon vs Mexico City Digital Nomad">⚖️ Lisbon vs Mexico City Digital Nomad</a></div></li>
+<li class="card" data-name="lisbon vs tbilisi digital nomad" data-letter="L"><h3>Lisbon vs Tbilisi Digital Nomad</h3><div class="minis"><a class="mini" href="lisbon-vs-tbilisi-digital-nomad.html" aria-label="Head-to-head comparison: Lisbon vs Tbilisi Digital Nomad">⚖️ Lisbon vs Tbilisi Digital Nomad</a></div></li>
+<li class="card" data-name="lisbon vs tokyo digital nomad" data-letter="L"><h3>Lisbon vs Tokyo Digital Nomad</h3><div class="minis"><a class="mini" href="lisbon-vs-tokyo-digital-nomad.html" aria-label="Head-to-head comparison: Lisbon vs Tokyo Digital Nomad">⚖️ Lisbon vs Tokyo Digital Nomad</a></div></li>
+<li class="card" data-name="medellin vs bali digital nomad" data-letter="M"><h3>Medellin vs Bali Digital Nomad</h3><div class="minis"><a class="mini" href="medellin-vs-bali-digital-nomad.html" aria-label="Head-to-head comparison: Medellin vs Bali Digital Nomad">⚖️ Medellin vs Bali Digital Nomad</a></div></li>
+<li class="card" data-name="medellin vs barcelona digital nomad" data-letter="M"><h3>Medellin vs Barcelona Digital Nomad</h3><div class="minis"><a class="mini" href="medellin-vs-barcelona-digital-nomad.html" aria-label="Head-to-head comparison: Medellin vs Barcelona Digital Nomad">⚖️ Medellin vs Barcelona Digital Nomad</a></div></li>
+<li class="card" data-name="medellin vs berlin digital nomad" data-letter="M"><h3>Medellin vs Berlin Digital Nomad</h3><div class="minis"><a class="mini" href="medellin-vs-berlin-digital-nomad.html" aria-label="Head-to-head comparison: Medellin vs Berlin Digital Nomad">⚖️ Medellin vs Berlin Digital Nomad</a></div></li>
+<li class="card" data-name="medellin vs chiang mai digital nomad" data-letter="M"><h3>Medellin vs Chiang Mai Digital Nomad</h3><div class="minis"><a class="mini" href="medellin-vs-chiang-mai-digital-nomad.html" aria-label="Head-to-head comparison: Medellin vs Chiang Mai Digital Nomad">⚖️ Medellin vs Chiang Mai Digital Nomad</a></div></li>
+<li class="card" data-name="medellin vs mexico city digital nomad" data-letter="M"><h3>Medellin vs Mexico City Digital Nomad</h3><div class="minis"><a class="mini" href="medellin-vs-mexico-city-digital-nomad.html" aria-label="Head-to-head comparison: Medellin vs Mexico City Digital Nomad">⚖️ Medellin vs Mexico City Digital Nomad</a></div></li>
+<li class="card" data-name="medellin vs tbilisi digital nomad" data-letter="M"><h3>Medellin vs Tbilisi Digital Nomad</h3><div class="minis"><a class="mini" href="medellin-vs-tbilisi-digital-nomad.html" aria-label="Head-to-head comparison: Medellin vs Tbilisi Digital Nomad">⚖️ Medellin vs Tbilisi Digital Nomad</a></div></li>
+<li class="card" data-name="medellin vs tokyo digital nomad" data-letter="M"><h3>Medellin vs Tokyo Digital Nomad</h3><div class="minis"><a class="mini" href="medellin-vs-tokyo-digital-nomad.html" aria-label="Head-to-head comparison: Medellin vs Tokyo Digital Nomad">⚖️ Medellin vs Tokyo Digital Nomad</a></div></li>
+<li class="card" data-name="mexico city vs barcelona digital nomad" data-letter="M"><h3>Mexico City vs Barcelona Digital Nomad</h3><div class="minis"><a class="mini" href="mexico-city-vs-barcelona-digital-nomad.html" aria-label="Head-to-head comparison: Mexico City vs Barcelona Digital Nomad">⚖️ Mexico City vs Barcelona Digital Nomad</a></div></li>
+<li class="card" data-name="mexico city vs berlin digital nomad" data-letter="M"><h3>Mexico City vs Berlin Digital Nomad</h3><div class="minis"><a class="mini" href="mexico-city-vs-berlin-digital-nomad.html" aria-label="Head-to-head comparison: Mexico City vs Berlin Digital Nomad">⚖️ Mexico City vs Berlin Digital Nomad</a></div></li>
+<li class="card" data-name="mexico city vs tbilisi digital nomad" data-letter="M"><h3>Mexico City vs Tbilisi Digital Nomad</h3><div class="minis"><a class="mini" href="mexico-city-vs-tbilisi-digital-nomad.html" aria-label="Head-to-head comparison: Mexico City vs Tbilisi Digital Nomad">⚖️ Mexico City vs Tbilisi Digital Nomad</a></div></li>
+<li class="card" data-name="mexico city vs tokyo digital nomad" data-letter="M"><h3>Mexico City vs Tokyo Digital Nomad</h3><div class="minis"><a class="mini" href="mexico-city-vs-tokyo-digital-nomad.html" aria-label="Head-to-head comparison: Mexico City vs Tokyo Digital Nomad">⚖️ Mexico City vs Tokyo Digital Nomad</a></div></li>
+<li class="card" data-name="tokyo vs barcelona digital nomad" data-letter="T"><h3>Tokyo vs Barcelona Digital Nomad</h3><div class="minis"><a class="mini" href="tokyo-vs-barcelona-digital-nomad.html" aria-label="Head-to-head comparison: Tokyo vs Barcelona Digital Nomad">⚖️ Tokyo vs Barcelona Digital Nomad</a></div></li>
+<li class="card" data-name="tokyo vs berlin digital nomad" data-letter="T"><h3>Tokyo vs Berlin Digital Nomad</h3><div class="minis"><a class="mini" href="tokyo-vs-berlin-digital-nomad.html" aria-label="Head-to-head comparison: Tokyo vs Berlin Digital Nomad">⚖️ Tokyo vs Berlin Digital Nomad</a></div></li>
+<li class="card" data-name="tokyo vs tbilisi digital nomad" data-letter="T"><h3>Tokyo vs Tbilisi Digital Nomad</h3><div class="minis"><a class="mini" href="tokyo-vs-tbilisi-digital-nomad.html" aria-label="Head-to-head comparison: Tokyo vs Tbilisi Digital Nomad">⚖️ Tokyo vs Tbilisi Digital Nomad</a></div></li>
+  </ul>
+
+  <h2 class="section-title reveal">🧭 More Resources</h2>
+  <ul class="grid" id="resGrid">
+    <li class="card" data-name="city comparison hub" data-letter="C"><h3>City Comparison Hub</h3><div class="minis"><a class="mini" href="compare.html">⚖️ Compare cities</a></div></li>
+    <li class="card" data-name="silo hubs builder" data-letter="S"><h3>Silo Hubs Builder</h3><div class="minis"><a class="mini" href="create_silo_hubs.html">🏗️ Open tool</a></div></li>
+  </ul>
+</main>
+
+<footer>
+  <p style="margin-bottom:10px;font-weight:500">© Matcha Maya Blog — Global Nomad Destination Guides</p>
+  <p>
+    <a href="about.html">About</a> |
+    <a href="https://seohobby.myteachify.com" target="_blank" rel="noopener">SEO Hobby Expert School</a> |
+    <a href="#top" rel="nofollow">↑ Back to top</a>
+  </p>
+</footer>
+
+<script>
+const q=document.getElementById('q'), count=document.getElementById('count');
+const cards=[...document.querySelectorAll('.grid .card')];
+let letter=null;
+function apply(){
+  const t=q.value.trim().toLowerCase(); let n=0;
+  cards.forEach(c=>{
+    const okT=!t||c.dataset.name.includes(t);
+    const okL=!letter||c.dataset.letter===letter;
+    const show=okT&&okL; c.classList.toggle('hidden',!show); if(show)n++;
+  });
+  count.textContent=n+' of '+cards.length+' entries shown'+(letter?' · starting with '+letter:'');
+}
+q.addEventListener('input',apply);
+document.getElementById('alpha').addEventListener('click',e=>{
+  const a=e.target.closest('a'); if(!a)return; e.preventDefault();
+  letter=(a.dataset.letter===letter)?null:a.dataset.letter;
+  document.querySelectorAll('.alpha a').forEach(x=>x.classList.toggle('on',x.dataset.letter===letter));
+  apply();
+});
+apply();
+</script>
+</body>
+</html>
